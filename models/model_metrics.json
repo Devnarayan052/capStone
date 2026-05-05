@@ -1,0 +1,29 @@
+{
+  "best": "XGBoost",
+  "models": [
+    {
+      "name": "Linear Regression",
+      "r2": 0.6808,
+      "rmse": 4.3298,
+      "mae": 2.5442,
+      "cv_r2": 0.721,
+      "cv_std": 0.0117
+    },
+    {
+      "name": "Random Forest",
+      "r2": 0.9399,
+      "rmse": 1.8794,
+      "mae": 0.9769,
+      "cv_r2": 0.9324,
+      "cv_std": 0.0047
+    },
+    {
+      "name": "XGBoost",
+      "r2": 0.9501,
+      "rmse": 1.7123,
+      "mae": 0.9075,
+      "cv_r2": 0.943,
+      "cv_std": 0.0036
+    }
+  ]
+}
