@@ -23,164 +23,62 @@ st.markdown("""
 .stApp{background:#fcfcfc;}
 .block-container{padding:0.5rem 1rem 5rem!important;max-width:1150px!important;margin:0 auto;}
 
-.carval-header{background:#ffffff;border-bottom:1px solid #e2e8f0;padding:0.6rem 0;margin-bottom:0;}
-.nav-row-1{display:flex;align-items:center;justify-content:space-between;}
+.carval-header{padding:2.5rem 0 1.5rem;display:flex;align-items:center;justify-content:space-between;}
+.brand{font-size:1.1rem;font-weight:900;color:#000000;letter-spacing:1px;text-transform:uppercase;}
+.brand span{color:#e01e26;}
 
-.brand-box{display:flex;align-items:center;gap:0.4rem;cursor:pointer;}
-.brand-icon{font-size:1.8rem;color:#de312d;}
-.brand{font-size:1.6rem;font-weight:900;color:#de312d;letter-spacing:-1.2px;}
-.brand span{color:#0f172a;}
+.nav-links{display:flex;gap:3rem;}
+.nav-active-btn button{color:#000000!important;border-bottom:2px solid #000000!important;border-radius:0!important;}
 
-.user-links{display:flex;align-items:center;justify-content:flex-end;gap:1.5rem;color:#64748b;font-size:0.85rem;font-weight:600;}
-
-/* nav buttons – all instances */
+/* nav buttons – override streamlit */
 div[data-testid="stHorizontalBlock"] button{
   background:transparent!important;border:none!important;
-  color:#1e293b!important;font-size:0.82rem!important;font-weight:700!important;
-  text-transform:uppercase!important;letter-spacing:0.5px!important;
-  padding:0.4rem 0.8rem!important;border-radius:4px!important;}
-div[data-testid="stHorizontalBlock"] button:hover{
-  color:#de312d!important;background:transparent!important;}
-.nav-active button{color:#de312d!important;border-bottom:2.5px solid #de312d!important;border-radius:0!important;}
-
-.loc-box{display:flex;align-items:center;gap:0.4rem;color:#64748b;font-size:0.82rem;font-weight:600;}
-
-/* Search Input Styling */
-div[data-testid="stTextInput"] input {
-  background-color: #f1f5f9 !important;
-  border-radius: 100px !important;
-  border: 1px solid #e2e8f0 !important;
-  padding: 0.5rem 1rem !important;
-  font-size: 0.9rem !important;
-  color: #1e293b !important;
-}
+  color:#999999!important;font-size:0.7rem!important;font-weight:700!important;
+  text-transform:uppercase!important;letter-spacing:2px!important;
+  padding:0!important;transition:color 0.2s!important;}
+div[data-testid="stHorizontalBlock"] button:hover{color:#000000!important;}
 
 /* ── HERO ── */
-.hero{text-align:center;padding:9vh 0 5vh;position:relative;}
-.hero-bg{
-  position:absolute;inset:0;z-index:0;overflow:hidden;
-  pointer-events:none;border-radius:24px;
-}
-.car-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  grid-template-rows:repeat(2,160px);
-  gap:8px;
-  opacity:0.25;
-  filter:blur(0.5px) saturate(0.8) contrast(1.1);
-  transform:scale(1.05);
-  animation:gridDrift 18s ease-in-out infinite alternate;
-}
-@keyframes gridDrift{
-  from{transform:scale(1.05) translateY(0px);}
-  to{transform:scale(1.08) translateY(-12px);}}
-.car-grid img{
-  width:100%;height:100%;object-fit:cover;
-  border-radius:10px;
-}
-.hero-overlay{
-  position:absolute;inset:0;z-index:1;
-  background:radial-gradient(ellipse at center, rgba(252,252,252,0.4) 0%, rgba(252,252,252,0.7) 55%, #fcfcfc 90%);
-}
-.hero-content{position:relative;z-index:2;}
-.hero-pill{display:inline-flex;align-items:center;gap:0.45rem;
-  padding:0.35rem 1rem;border-radius:100px;
-  background:rgba(222,49,45,0.06);border:1px solid rgba(222,49,45,0.15);
-  color:#de312d;font-size:0.75rem;font-weight:700;margin-bottom:1.5rem;
-  letter-spacing:0.5px;text-transform:uppercase;}
-.hero-pill span{width:7px;height:7px;background:#de312d;border-radius:50%;
-  animation:pillPulse 2s infinite;}
-@keyframes pillPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.5}}
-.hero-h1{font-size:3.5rem;font-weight:900;color:#0f172a;
-  line-height:1.1;letter-spacing:-2.5px;margin-bottom:1.2rem;}
-.hero-h1 em{font-style:normal;color:#de312d;}
-.hero-sub{font-size:1.05rem;color:#475569;margin-bottom:2.5rem;line-height:1.6;}
-.hero-trust{display:flex;justify-content:center;gap:2rem;margin-top:4rem;
-  padding-top:2rem;border-top:1px solid rgba(0,0,0,0.05);}
-.trust-item{display:flex;align-items:center;gap:0.5rem;color:#64748b;
-  font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;}
-.trust-dot{color:#de312d;font-size:0.6rem;}
+.hero{text-align:center;padding:15vh 0 10vh;}
+.hero-h1{font-size:4.8rem;font-weight:900;color:#000000;
+  line-height:0.95;letter-spacing:-5px;margin-bottom:2rem;}
+.hero-h1 span{color:#e01e26;}
+.hero-sub{font-size:1.1rem;color:#888888;max-width:500px;margin:0 auto;line-height:1.7;letter-spacing:-0.2px;}
 
 /* ── BUTTONS ── */
 div[data-testid="stButton"] button[kind="primary"]{
-  background:#de312d!important;
-  color:#fff!important;border:none!important;border-radius:100px!important;
-  padding:0.8rem 2.5rem!important;font-size:1.05rem!important;
-  font-weight:700!important;letter-spacing:0.3px!important;
-  box-shadow:0 4px 15px rgba(222,49,45,0.3);
-  transition:transform 0.2s,box-shadow 0.2s!important;}
+  background:#000000!important;
+  color:#fff!important;border:none!important;border-radius:0!important;
+  padding:1.2rem 4rem!important;font-size:0.8rem!important;
+  font-weight:800!important;text-transform:uppercase!important;letter-spacing:3px!important;}
 div[data-testid="stButton"] button[kind="primary"]:hover{
-  transform:translateY(-2px)!important;
-  box-shadow:0 6px 25px rgba(222,49,45,0.45)!important;}
+  background:#e01e26!important;}
 
 /* ── FORM ── */
-[data-testid="stForm"]{background:transparent!important;border:none!important;}
 .form-card{
   background:#ffffff;
-  border:1px solid #e2e8f0;border-radius:18px;
-  padding:1.6rem 1.8rem;margin-bottom:1rem;
-  box-shadow:0 4px 6px -1px rgba(0,0,0,0.02);
-  transition:border-color 0.3s,box-shadow 0.3s;}
-.form-card:hover{
-  border-color:#cbd5e1;
-  box-shadow:0 10px 15px -3px rgba(0,0,0,0.04);}
-.step-label{font-size:0.68rem;font-weight:700;letter-spacing:1.8px;
-  color:#64748b;text-transform:uppercase;margin-bottom:1rem;
-  display:flex;align-items:center;gap:0.5rem;}
-.step-num{width:20px;height:20px;border-radius:50%;
-  background:rgba(222,49,45,0.08);border:1px solid rgba(222,49,45,0.2);
-  color:#de312d;font-size:0.68rem;font-weight:800;
-  display:inline-flex;align-items:center;justify-content:center;}
-label{color:#475569!important;font-size:0.83rem!important;font-weight:600!important;}
+  border:1px solid #f1f5f9;border-radius:4px;
+  padding:2rem;margin-bottom:1.5rem;}
+.step-label{font-size:0.6rem;font-weight:800;letter-spacing:2px;
+  color:#999999;text-transform:uppercase;margin-bottom:1.5rem;}
 .stSelectbox>div>div,.stNumberInput>div>div>input{
-  background:#f8fafc!important;
-  border:1px solid #e2e8f0!important;
-  border-radius:10px!important;color:#0f172a!important;}
-.stSlider [data-baseweb="slider"] div{background:#de312d!important;}
+  background:#ffffff!important;
+  border:1px solid #eeeeee!important;
+  border-radius:2px!important;color:#111111!important;}
+.stSlider [data-baseweb="slider"] div{background:#111111!important;}
 
 /* ── RESULT ── */
-@keyframes fadeScaleIn{
-  from{opacity:0;transform:scale(0.94) translateY(16px);}
-  to{opacity:1;transform:scale(1) translateY(0);}}
-@keyframes pricePop{
-  0%{opacity:0;transform:scale(0.7);}
-  60%{transform:scale(1.06);}
-  100%{opacity:1;transform:scale(1);}}
-.result-outer{
-  margin-top:2.5rem;position:relative;
-  animation:fadeScaleIn 0.6s cubic-bezier(0.16,1,0.3,1) both;}
-.result-glow{
-  position:absolute;inset:-2px;border-radius:26px;z-index:0;
-  background:#de312d;
-  filter:blur(2px);opacity:0.1;}
 .result-card{
-  position:relative;z-index:1;background:#ffffff;
-  border-radius:24px;padding:3rem 2rem 2.5rem;text-align:center;
-  box-shadow:0 20px 25px -5px rgba(0,0,0,0.05),0 10px 10px -5px rgba(0,0,0,0.02);}
-.result-check{font-size:2.5rem;margin-bottom:1rem;color:#de312d;
-  animation:pricePop 0.5s cubic-bezier(0.16,1,0.3,1) 0.3s both;}
-.result-eye{
-  font-size:0.72rem;letter-spacing:2.5px;text-transform:uppercase;
-  color:#de312d;font-weight:700;margin-bottom:0.8rem;}
+  background:#ffffff;border:1px solid #111111;
+  border-radius:4px;padding:4rem 2rem;text-align:center;}
 .result-price{
-  font-size:clamp(3rem,7vw,5rem);font-weight:900;
-  letter-spacing:-2px;color:#0f172a;line-height:1;
-  margin-bottom:0.2rem;
-  animation:pricePop 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s both;}
-.result-price-sub{color:#64748b;font-size:1rem;margin-bottom:0.8rem;}
-.result-range{
-  display:inline-block;padding:0.45rem 1.4rem;border-radius:100px;
-  background:#f8fafc;border:1px solid #e2e8f0;
-  color:#64748b;font-size:0.92rem;font-weight:600;margin-bottom:2rem;
-  letter-spacing:0.3px;}
-.result-tags{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;}
+  font-size:5rem;font-weight:800;color:#111111;
+  letter-spacing:-4px;line-height:1;margin-bottom:0.5rem;}
+.result-price span{color:#e01e26;}
 .rtag{
-  display:inline-flex;align-items:center;gap:0.4rem;
-  padding:0.38rem 0.95rem;border-radius:100px;
-  background:#f5f3ff;border:1px solid #ddd6fe;
-  color:#6d28d9;font-size:0.79rem;font-weight:600;
-  transition:background 0.2s,transform 0.2s;cursor:default;}
-.rtag:hover{background:#ede9fe;transform:translateY(-1px);}
+  display:inline-flex;padding:0.4rem 1rem;border:1px solid #eeeeee;
+  border-radius:2px;color:#666666;font-size:0.75rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;}
 
 /* ── PAGE HEADERS ── */
 .pg-eye{font-size:0.72rem;font-weight:700;letter-spacing:2px;
@@ -300,78 +198,39 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Top Bar with Search & User Links
-t1,t2,t3=st.columns([1,2,1])
-with t2:
-    search_query = st.text_input("", placeholder="🔍 Search for Your Car...", label_visibility="collapsed")
-    if search_query:
-        st.session_state.page="Predict"
-        st.rerun()
-with t3:
-    st.markdown("""
-    <div class="user-links">
-      <div>English ▾</div>
-      <div>❤</div>
-      <div>Login / Register</div>
-    </div>
-    """, unsafe_allow_html=True)
+# ═══════════════════════════ NAVBAR ══════════════════════════════════════════
+st.markdown('<div class="carval-header"><div class="brand">CarVal<span>.</span></div></div>', unsafe_allow_html=True)
 
-# Secondary Nav Row
-c1,c2,c3=st.columns([1,4,1.2])
+# Main Navigation
+_,c2,_=st.columns([1,3,1])
 with c2:
     n1,n2,n3,n4=st.columns(4)
     for col,pg in zip([n1,n2,n3,n4],PAGES):
         with col:
-            active = "nav-active" if st.session_state.page==pg else ""
-            st.markdown(f'<div class="{active}">', unsafe_allow_html=True)
+            active_class = "nav-active-btn" if st.session_state.page==pg else ""
+            st.markdown(f'<div class="{active_class}" style="text-align:center;">', unsafe_allow_html=True)
             if st.button(pg.upper(), key=f"nav_{pg}"):
                 st.session_state.page=pg; st.session_state.result=None; st.rerun()
             st.markdown('</div>', unsafe_allow_html=True)
-with c3:
-    st.markdown('<div class="loc-box">📍 Ludhiana ▾</div>', unsafe_allow_html=True)
 
-st.markdown('<div style="margin-bottom:1rem;"></div>', unsafe_allow_html=True)
+st.markdown('<div style="margin-bottom:6rem;"></div>', unsafe_allow_html=True)
 
 
 # ════════════════════════════ HOME ══════════════════════════════════════════
 if st.session_state.page=="Home":
     st.markdown("""
     <div class="hero">
-      <div class="hero-bg">
-        <div class="car-grid">
-          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&q=60" alt="car"/>
-          <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=400&q=60" alt="car"/>
-          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=400&q=60" alt="car"/>
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&q=60" alt="car"/>
-          <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&q=60" alt="car"/>
-          <img src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=400&q=60" alt="car"/>
-          <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&q=60" alt="car"/>
-          <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=400&q=60" alt="car"/>
-        </div>
-        <div class="hero-overlay"></div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-pill"><span></span> AI-Powered Pricing Engine</div>
-        <div class="hero-h1">Your Car's Real Worth,<br><em>Estimated in Seconds</em></div>
-        <div class="hero-sub">
-          Skip the guessing. Get an instant, data-backed resale price<br>
-          for any used car in India — no expertise required.
-        </div>
-      </div>
-    </div>""", unsafe_allow_html=True)
+      <div class="hero-h1">The future of car<br>valuation is <span>here.</span></div>
+      <div class="hero-sub">No clutter. No noise. Just the raw intelligence of 17,000+ data points distilled into a single, precise number.</div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    _,mid,_=st.columns([1.3,1,1.3])
+    _,mid,_=st.columns([1,1,1])
     with mid:
-        if st.button("✦  Estimate My Car's Value", type="primary", use_container_width=True):
+        if st.button("Begin Analysis", kind="primary", use_container_width=True):
             st.session_state.page="Predict"; st.rerun()
 
-    st.markdown("""
-    <div class="hero-trust">
-      <div class="trust-item"><span class="trust-dot">◆</span> 17,000+ Real Listings</div>
-      <div class="trust-item"><span class="trust-dot">◆</span> AI-Powered (XGBoost)</div>
-      <div class="trust-item"><span class="trust-dot">◆</span> Updated Market Trends</div>
-      <div class="trust-item"><span class="trust-dot">◆</span> Instant Results</div>
-    </div>""", unsafe_allow_html=True)
+
 
 
 # ════════════════════════════ PREDICT ═══════════════════════════════════════
