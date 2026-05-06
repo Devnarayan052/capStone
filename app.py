@@ -24,25 +24,33 @@ st.markdown("""
 .block-container{padding:0.5rem 1rem 5rem!important;max-width:1150px!important;margin:0 auto;}
 
 /* ── NAV ── */
-.carval-nav{display:flex;align-items:center;justify-content:space-between;
-  padding:1.1rem 0 0.8rem;margin-bottom:1.5rem;
-  border-bottom:1px solid rgba(255,255,255,0.05);}
-.brand{font-size:1.4rem;font-weight:900;
-  background:linear-gradient(90deg,#6d28d9,#2563eb);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.tagline{font-size:0.72rem;color:#64748b;font-weight:500;margin-top:2px;}
+.carval-header{background:#ffffff;border-bottom:1px solid #e2e8f0;padding:0.75rem 0;margin-bottom:0;}
+.nav-row-1{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;}
+.nav-row-2{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f1f5f9;padding-top:0.75rem;}
+
+.brand-box{display:flex;align-items:center;gap:0.5rem;}
+.brand{font-size:1.6rem;font-weight:900;color:#de312d;letter-spacing:-1px;} /* CarDekho Red */
+.brand span{color:#1e293b;}
+
+.search-pill{
+  flex:1;max-width:500px;margin:0 2rem;
+  background:#f1f5f9;border-radius:100px;
+  padding:0.6rem 1.2rem;display:flex;align-items:center;
+  color:#94a3b8;font-size:0.88rem;border:1px solid #e2e8f0;}
+
+.user-links{display:flex;align-items:center;gap:1.5rem;color:#64748b;font-size:0.85rem;font-weight:500;}
 
 /* nav buttons – all instances */
 div[data-testid="stHorizontalBlock"] button{
   background:transparent!important;border:none!important;
-  color:#64748b!important;font-size:0.88rem!important;font-weight:500!important;
-  padding:0.4rem 1rem!important;border-radius:8px!important;
-  transition:color 0.2s,background 0.2s!important;}
+  color:#1e293b!important;font-size:0.82rem!important;font-weight:700!important;
+  text-transform:uppercase!important;letter-spacing:0.5px!important;
+  padding:0.4rem 0.8rem!important;border-radius:4px!important;}
 div[data-testid="stHorizontalBlock"] button:hover{
-  color:#1e293b!important;background:rgba(0,0,0,0.05)!important;}
-.nav-active button{color:#7c3aed!important;
-  background:rgba(124,58,237,0.1)!important;
-  border:1px solid rgba(124,58,237,0.15)!important;}
+  color:#de312d!important;background:transparent!important;}
+.nav-active button{color:#de312d!important;border-bottom:2px solid #de312d!important;border-radius:0!important;}
+
+.loc-box{display:flex;align-items:center;gap:0.4rem;color:#64748b;font-size:0.82rem;font-weight:600;}
 
 /* ── HERO ── */
 .hero{text-align:center;padding:9vh 0 5vh;position:relative;}
@@ -293,18 +301,39 @@ PAGES=["Home","Predict","Insights","Model"]
 
 
 # ═══════════════════════════ NAVBAR ══════════════════════════════════════════
-st.markdown('<div class="carval-nav">', unsafe_allow_html=True)
-nb0,nb1,nb2,nb3,nb4,nb5=st.columns([2,0.2,1,1,1,1])
-with nb0:
-    st.markdown('<div class="brand">🚗 CarVal</div><div class="tagline">India\'s Smart Car Valuation</div>', unsafe_allow_html=True)
-for col,pg in zip([nb2,nb3,nb4,nb5],PAGES):
-    with col:
-        active = "nav-active" if st.session_state.page==pg else ""
-        st.markdown(f'<div class="{active}">', unsafe_allow_html=True)
-        if st.button(pg, key=f"nav_{pg}"):
-            st.session_state.page=pg; st.session_state.result=None; st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
+st.markdown(f"""
+<div class="carval-header">
+  <div class="nav-row-1">
+    <div class="brand-box">
+      <div class="brand">Car<span>Val</span></div>
+    </div>
+    <div class="search-pill">
+      🔍 &nbsp; Search for Your Car...
+    </div>
+    <div class="user-links">
+      <div>English ▾</div>
+      <div>❤</div>
+      <div>Login / Register</div>
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+# Secondary Nav Row
+c1,c2,c3=st.columns([1,4,1.2])
+with c2:
+    n1,n2,n3,n4=st.columns(4)
+    for col,pg in zip([n1,n2,n3,n4],PAGES):
+        with col:
+            active = "nav-active" if st.session_state.page==pg else ""
+            st.markdown(f'<div class="{active}">', unsafe_allow_html=True)
+            if st.button(pg.upper(), key=f"nav_{pg}"):
+                st.session_state.page=pg; st.session_state.result=None; st.rerun()
+            st.markdown('</div>', unsafe_allow_html=True)
+with c3:
+    st.markdown('<div class="loc-box">📍 Ludhiana ▾</div>', unsafe_allow_html=True)
+
+st.markdown('<div style="margin-bottom:2rem;"></div>', unsafe_allow_html=True)
 
 
 # ════════════════════════════ HOME ══════════════════════════════════════════
