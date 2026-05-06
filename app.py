@@ -20,29 +20,29 @@ st.markdown("""
 *,html,body{font-family:'Inter',sans-serif!important;box-sizing:border-box;}
 #MainMenu,header,footer,[data-testid="stToolbar"],
 [data-testid="stDecoration"],[data-testid="collapsedControl"]{display:none!important;}
-.stApp{background:#06080f;}
-.block-container{padding:0.5rem 2rem 5rem!important;max-width:980px!important;margin:0 auto;}
+.stApp{background:#fcfcfc;}
+.block-container{padding:0.5rem 1rem 5rem!important;max-width:1150px!important;margin:0 auto;}
 
 /* ── NAV ── */
 .carval-nav{display:flex;align-items:center;justify-content:space-between;
   padding:1.1rem 0 0.8rem;margin-bottom:1.5rem;
   border-bottom:1px solid rgba(255,255,255,0.05);}
 .brand{font-size:1.4rem;font-weight:900;
-  background:linear-gradient(90deg,#a78bfa,#38bdf8);
+  background:linear-gradient(90deg,#6d28d9,#2563eb);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.tagline{font-size:0.72rem;color:#334155;font-weight:500;margin-top:2px;}
+.tagline{font-size:0.72rem;color:#64748b;font-weight:500;margin-top:2px;}
 
 /* nav buttons – all instances */
 div[data-testid="stHorizontalBlock"] button{
   background:transparent!important;border:none!important;
-  color:#475569!important;font-size:0.88rem!important;font-weight:500!important;
+  color:#64748b!important;font-size:0.88rem!important;font-weight:500!important;
   padding:0.4rem 1rem!important;border-radius:8px!important;
   transition:color 0.2s,background 0.2s!important;}
 div[data-testid="stHorizontalBlock"] button:hover{
-  color:#e2e8f0!important;background:rgba(255,255,255,0.05)!important;}
-.nav-active button{color:#a78bfa!important;
-  background:rgba(139,92,246,0.12)!important;
-  border:1px solid rgba(139,92,246,0.22)!important;}
+  color:#1e293b!important;background:rgba(0,0,0,0.05)!important;}
+.nav-active button{color:#7c3aed!important;
+  background:rgba(124,58,237,0.1)!important;
+  border:1px solid rgba(124,58,237,0.15)!important;}
 
 /* ── HERO ── */
 .hero{text-align:center;padding:9vh 0 5vh;position:relative;}
@@ -55,8 +55,8 @@ div[data-testid="stHorizontalBlock"] button:hover{
   grid-template-columns:repeat(4,1fr);
   grid-template-rows:repeat(2,160px);
   gap:8px;
-  opacity:0.32;
-  filter:blur(0.5px) saturate(0.6);
+  opacity:0.25;
+  filter:blur(0.5px) saturate(0.8) contrast(1.1);
   transform:scale(1.05);
   animation:gridDrift 18s ease-in-out infinite alternate;
 }
@@ -69,31 +69,31 @@ div[data-testid="stHorizontalBlock"] button:hover{
 }
 .hero-overlay{
   position:absolute;inset:0;z-index:1;
-  background:radial-gradient(ellipse at center, rgba(6,8,15,0.45) 0%, rgba(6,8,15,0.7) 55%, #06080f 90%);
+  background:radial-gradient(ellipse at center, rgba(252,252,252,0.4) 0%, rgba(252,252,252,0.7) 55%, #fcfcfc 90%);
 }
 .hero-content{position:relative;z-index:2;}
 .hero-pill{display:inline-flex;align-items:center;gap:0.45rem;
   padding:0.35rem 1rem;border-radius:100px;
-  background:rgba(139,92,246,0.12);border:1px solid rgba(139,92,246,0.28);
-  color:#a78bfa;font-size:0.78rem;font-weight:600;letter-spacing:0.8px;
+  background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);
+  color:#7c3aed;font-size:0.78rem;font-weight:700;letter-spacing:0.8px;
   text-transform:uppercase;margin-bottom:1.6rem;}
 .hero-pill span{width:6px;height:6px;border-radius:50%;
-  background:#a78bfa;display:inline-block;
+  background:#7c3aed;display:inline-block;
   animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
 .hero-h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;
-  line-height:1.08;letter-spacing:-1.5px;color:#f1f5f9;margin-bottom:1.1rem;}
+  line-height:1.08;letter-spacing:-1.5px;color:#0f172a;margin-bottom:1.1rem;}
 .hero-h1 em{font-style:normal;
-  background:linear-gradient(135deg,#c084fc,#38bdf8);
+  background:linear-gradient(135deg,#6d28d9,#2563eb);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .hero-sub{color:#475569;font-size:1.05rem;line-height:1.75;
   max-width:460px;margin:0 auto 2.5rem;}
 .hero-trust{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;
   margin-top:3rem;padding-top:2rem;
-  border-top:1px solid rgba(255,255,255,0.05);}
+  border-top:1px solid rgba(0,0,0,0.06);}
 .trust-item{display:flex;align-items:center;gap:0.5rem;
-  color:#475569;font-size:0.82rem;font-weight:500;}
-.trust-dot{color:#8b5cf6;font-size:1rem;}
+  color:#64748b;font-size:0.82rem;font-weight:600;}
+.trust-dot{color:#7c3aed;font-size:1rem;}
 
 /* ── BUTTONS ── */
 div[data-testid="stButton"] button[kind="primary"]{
@@ -114,26 +114,26 @@ div[data-testid="stButton"] button[kind="primary"]:hover{
 /* ── FORM ── */
 [data-testid="stForm"]{background:transparent!important;border:none!important;}
 .form-card{
-  background:rgba(255,255,255,0.025);
-  border:1px solid rgba(255,255,255,0.07);border-radius:18px;
+  background:#ffffff;
+  border:1px solid #e2e8f0;border-radius:18px;
   padding:1.6rem 1.8rem;margin-bottom:1rem;
+  box-shadow:0 4px 6px -1px rgba(0,0,0,0.02);
   transition:border-color 0.3s,box-shadow 0.3s;}
 .form-card:hover{
-  border-color:rgba(139,92,246,0.25);
-  box-shadow:0 0 30px rgba(124,58,237,0.06);}
+  border-color:#cbd5e1;
+  box-shadow:0 10px 15px -3px rgba(0,0,0,0.04);}
 .step-label{font-size:0.68rem;font-weight:700;letter-spacing:1.8px;
-  color:#334155;text-transform:uppercase;margin-bottom:1rem;
+  color:#64748b;text-transform:uppercase;margin-bottom:1rem;
   display:flex;align-items:center;gap:0.5rem;}
 .step-num{width:20px;height:20px;border-radius:50%;
-  background:rgba(139,92,246,0.25);border:1px solid rgba(139,92,246,0.4);
-  color:#a78bfa;font-size:0.68rem;font-weight:800;
+  background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);
+  color:#7c3aed;font-size:0.68rem;font-weight:800;
   display:inline-flex;align-items:center;justify-content:center;}
-label{color:#94a3b8!important;font-size:0.83rem!important;font-weight:500!important;}
-small{color:#334155!important;font-size:0.75rem!important;}
+label{color:#475569!important;font-size:0.83rem!important;font-weight:600!important;}
 .stSelectbox>div>div,.stNumberInput>div>div>input{
-  background:rgba(255,255,255,0.04)!important;
-  border:1px solid rgba(255,255,255,0.09)!important;
-  border-radius:10px!important;color:#e2e8f0!important;}
+  background:#f8fafc!important;
+  border:1px solid #e2e8f0!important;
+  border-radius:10px!important;color:#0f172a!important;}
 .stSlider [data-baseweb="slider"] div{background:#7c3aed!important;}
 
 /* ── RESULT ── */
@@ -158,62 +158,89 @@ small{color:#334155!important;font-size:0.75rem!important;}
   animation:glowRotate 4s ease infinite;
   filter:blur(2px);opacity:0.85;}
 .result-card{
-  position:relative;z-index:1;background:#0a0d14;
-  border-radius:24px;padding:3rem 2rem 2.5rem;text-align:center;}
-.result-check{font-size:2.5rem;margin-bottom:1rem;
+  position:relative;z-index:1;background:#ffffff;
+  border-radius:24px;padding:3rem 2rem 2.5rem;text-align:center;
+  box-shadow:0 20px 25px -5px rgba(0,0,0,0.05),0 10px 10px -5px rgba(0,0,0,0.02);}
+.result-check{font-size:2.5rem;margin-bottom:1rem;color:#7c3aed;
   animation:pricePop 0.5s cubic-bezier(0.16,1,0.3,1) 0.3s both;}
 .result-eye{
   font-size:0.72rem;letter-spacing:2.5px;text-transform:uppercase;
-  color:#7c3aed;font-weight:700;margin-bottom:0.8rem;}
+  color:#6d28d9;font-weight:700;margin-bottom:0.8rem;}
 .result-price{
   font-size:clamp(3rem,7vw,5rem);font-weight:900;
-  letter-spacing:-2px;color:#f8fafc;line-height:1;
-  text-shadow:0 0 80px rgba(124,58,237,0.6),0 0 30px rgba(56,189,248,0.3);
+  letter-spacing:-2px;color:#0f172a;line-height:1;
   margin-bottom:0.2rem;
   animation:pricePop 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s both;}
-.result-price-sub{color:#475569;font-size:1rem;margin-bottom:0.8rem;}
+.result-price-sub{color:#64748b;font-size:1rem;margin-bottom:0.8rem;}
 .result-range{
   display:inline-block;padding:0.45rem 1.4rem;border-radius:100px;
-  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);
-  color:#94a3b8;font-size:0.92rem;font-weight:500;margin-bottom:2rem;
+  background:#f8fafc;border:1px solid #e2e8f0;
+  color:#64748b;font-size:0.92rem;font-weight:600;margin-bottom:2rem;
   letter-spacing:0.3px;}
 .result-tags{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;}
 .rtag{
   display:inline-flex;align-items:center;gap:0.4rem;
   padding:0.38rem 0.95rem;border-radius:100px;
-  background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);
-  color:#a78bfa;font-size:0.79rem;font-weight:600;
+  background:#f5f3ff;border:1px solid #ddd6fe;
+  color:#6d28d9;font-size:0.79rem;font-weight:600;
   transition:background 0.2s,transform 0.2s;cursor:default;}
-.rtag:hover{background:rgba(139,92,246,0.2);transform:translateY(-1px);}
+.rtag:hover{background:#ede9fe;transform:translateY(-1px);}
 
 /* ── PAGE HEADERS ── */
 .pg-eye{font-size:0.72rem;font-weight:700;letter-spacing:2px;
-  color:#7c3aed;text-transform:uppercase;margin-bottom:0.4rem;}
-.pg-title{font-size:2rem;font-weight:800;color:#f1f5f9;
+  color:#6d28d9;text-transform:uppercase;margin-bottom:0.4rem;}
+.pg-title{font-size:2rem;font-weight:800;color:#0f172a;
   letter-spacing:-0.8px;margin-bottom:0.3rem;}
-.pg-sub{color:#475569;font-size:0.92rem;margin-bottom:2rem;}
+.pg-sub{color:#64748b;font-size:0.92rem;margin-bottom:2rem;}
 
 /* ── INSIGHT CARDS ── */
-.insight-label{font-size:0.78rem;color:#a78bfa;font-weight:700;
+.insight-label{font-size:0.78rem;color:#6d28d9;font-weight:700;
   margin-bottom:0.25rem;letter-spacing:0.5px;}
-.insight-desc{font-size:0.83rem;color:#334155;
+.insight-desc{font-size:0.83rem;color:#475569;
   margin-bottom:1rem;line-height:1.55;}
 
 /* ── MODEL STAT CARDS ── */
 .model-stat-row{display:flex;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;}
 .model-stat{flex:1;min-width:140px;
-  background:rgba(255,255,255,0.025);
-  border:1px solid rgba(255,255,255,0.07);border-radius:14px;
-  padding:1.2rem;text-align:center;}
+  background:#ffffff;
+  border:1px solid #e2e8f0;border-radius:14px;
+  padding:1.2rem;text-align:center;
+  box-shadow:0 1px 3px rgba(0,0,0,0.05);}
 .ms-label{font-size:0.7rem;font-weight:700;letter-spacing:1.5px;
-  text-transform:uppercase;color:#334155;margin-bottom:0.5rem;}
-.ms-value{font-size:1.9rem;font-weight:900;color:#f1f5f9;}
-.ms-unit{font-size:0.8rem;color:#475569;margin-top:0.2rem;}
+  text-transform:uppercase;color:#94a3b8;margin-bottom:0.5rem;}
+.ms-value{font-size:1.9rem;font-weight:900;color:#0f172a;}
+.ms-unit{font-size:0.8rem;color:#64748b;margin-top:0.2rem;}
 
 /* scrollbar */
 ::-webkit-scrollbar{width:5px;}
-::-webkit-scrollbar-track{background:#06080f;}
-::-webkit-scrollbar-thumb{background:#1e293b;border-radius:3px;}
+::-webkit-scrollbar-track{background:#fcfcfc;}
+::-webkit-scrollbar-thumb{background:#e2e8f0;border-radius:3px;}
+
+/* ── MOBILE RESPONSIVENESS ── */
+@media (max-width: 768px) {
+  .block-container {padding: 0.5rem 0.8rem 4rem !important;}
+  .carval-nav {flex-direction: column; align-items: flex-start; gap: 0.8rem; padding: 0.8rem 0;}
+  .brand {font-size: 1.2rem;}
+  .tagline {font-size: 0.65rem;}
+  .hero-h1 {font-size: 1.7rem !important; line-height: 1.2 !important;}
+  .hero-sub {font-size: 0.82rem !important; margin-bottom: 1.5rem !important;}
+  .pg-title {font-size: 1.5rem !important;}
+  
+  /* Stack nav buttons or make them very compact */
+  div[data-testid="stHorizontalBlock"] {gap: 4px !important;}
+  div[data-testid="stHorizontalBlock"] button {
+    font-size: 0.72rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+  
+  .result-price {font-size: 2.8rem !important;}
+  .result-card {padding: 2rem 1rem 1.5rem !important;}
+  .result-tags {gap: 0.5rem !important;}
+  .rtag {font-size: 0.7rem !important; padding: 0.25rem 0.6rem !important;}
+  
+  /* Fix expander text wrapping and alignment */
+  .stExpander div[role="button"] p {font-size: 0.8rem !important;}
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -404,7 +431,7 @@ elif st.session_state.page=="Insights":
 
     df=raw_df[raw_df["price_lakh"]<=50].copy()
     CS=dict(paper_bgcolor="rgba(0,0,0,0)",plot_bgcolor="rgba(0,0,0,0)",
-            font_color="#94a3b8",margin=dict(l=10,r=10,t=40,b=10))
+            font_color="#475569",margin=dict(l=10,r=10,t=40,b=10))
 
     t1,t2,t3,t4=st.tabs(["📅 Age & Value","🛣️ Usage Impact","⛽ Fuel Type","🔥 Key Factors"])
 
@@ -496,7 +523,7 @@ elif st.session_state.page=="Model":
             use_container_width=True, hide_index=True)
 
     CS=dict(paper_bgcolor="rgba(0,0,0,0)",plot_bgcolor="rgba(0,0,0,0)",
-            font_color="#94a3b8",showlegend=False)
+            font_color="#475569",showlegend=False)
     mdf=pd.DataFrame(metrics["models"])
     mdf.columns=["Model","R²","RMSE (₹L)","MAE (₹L)","CV R²","CV Std"]
     c1,c2=st.columns(2)
