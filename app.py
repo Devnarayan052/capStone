@@ -23,22 +23,15 @@ st.markdown("""
 .stApp{background:#fcfcfc;}
 .block-container{padding:0.5rem 1rem 5rem!important;max-width:1150px!important;margin:0 auto;}
 
-/* ── NAV ── */
-.carval-header{background:#ffffff;border-bottom:1px solid #e2e8f0;padding:0.75rem 0;margin-bottom:0;}
-.nav-row-1{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;}
-.nav-row-2{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f1f5f9;padding-top:0.75rem;}
+.carval-header{background:#ffffff;border-bottom:1px solid #e2e8f0;padding:0.6rem 0;margin-bottom:0;}
+.nav-row-1{display:flex;align-items:center;justify-content:space-between;}
 
-.brand-box{display:flex;align-items:center;gap:0.5rem;}
-.brand{font-size:1.6rem;font-weight:900;color:#de312d;letter-spacing:-1px;} /* CarDekho Red */
-.brand span{color:#1e293b;}
+.brand-box{display:flex;align-items:center;gap:0.4rem;cursor:pointer;}
+.brand-icon{font-size:1.8rem;color:#de312d;}
+.brand{font-size:1.6rem;font-weight:900;color:#de312d;letter-spacing:-1.2px;}
+.brand span{color:#0f172a;}
 
-.search-pill{
-  flex:1;max-width:500px;margin:0 2rem;
-  background:#f1f5f9;border-radius:100px;
-  padding:0.6rem 1.2rem;display:flex;align-items:center;
-  color:#94a3b8;font-size:0.88rem;border:1px solid #e2e8f0;}
-
-.user-links{display:flex;align-items:center;gap:1.5rem;color:#64748b;font-size:0.85rem;font-weight:500;}
+.user-links{display:flex;align-items:center;justify-content:flex-end;gap:1.5rem;color:#64748b;font-size:0.85rem;font-weight:600;}
 
 /* nav buttons – all instances */
 div[data-testid="stHorizontalBlock"] button{
@@ -48,9 +41,19 @@ div[data-testid="stHorizontalBlock"] button{
   padding:0.4rem 0.8rem!important;border-radius:4px!important;}
 div[data-testid="stHorizontalBlock"] button:hover{
   color:#de312d!important;background:transparent!important;}
-.nav-active button{color:#de312d!important;border-bottom:2px solid #de312d!important;border-radius:0!important;}
+.nav-active button{color:#de312d!important;border-bottom:2.5px solid #de312d!important;border-radius:0!important;}
 
 .loc-box{display:flex;align-items:center;gap:0.4rem;color:#64748b;font-size:0.82rem;font-weight:600;}
+
+/* Search Input Styling */
+div[data-testid="stTextInput"] input {
+  background-color: #f1f5f9 !important;
+  border-radius: 100px !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
+  color: #1e293b !important;
+}
 
 /* ── HERO ── */
 .hero{text-align:center;padding:9vh 0 5vh;position:relative;}
@@ -82,42 +85,33 @@ div[data-testid="stHorizontalBlock"] button:hover{
 .hero-content{position:relative;z-index:2;}
 .hero-pill{display:inline-flex;align-items:center;gap:0.45rem;
   padding:0.35rem 1rem;border-radius:100px;
-  background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);
-  color:#7c3aed;font-size:0.78rem;font-weight:700;letter-spacing:0.8px;
-  text-transform:uppercase;margin-bottom:1.6rem;}
-.hero-pill span{width:6px;height:6px;border-radius:50%;
-  background:#7c3aed;display:inline-block;
-  animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-.hero-h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;
-  line-height:1.08;letter-spacing:-1.5px;color:#0f172a;margin-bottom:1.1rem;}
-.hero-h1 em{font-style:normal;
-  background:linear-gradient(135deg,#6d28d9,#2563eb);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero-sub{color:#475569;font-size:1.05rem;line-height:1.75;
-  max-width:460px;margin:0 auto 2.5rem;}
-.hero-trust{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;
-  margin-top:3rem;padding-top:2rem;
-  border-top:1px solid rgba(0,0,0,0.06);}
-.trust-item{display:flex;align-items:center;gap:0.5rem;
-  color:#64748b;font-size:0.82rem;font-weight:600;}
-.trust-dot{color:#7c3aed;font-size:1rem;}
+  background:rgba(222,49,45,0.06);border:1px solid rgba(222,49,45,0.15);
+  color:#de312d;font-size:0.75rem;font-weight:700;margin-bottom:1.5rem;
+  letter-spacing:0.5px;text-transform:uppercase;}
+.hero-pill span{width:7px;height:7px;background:#de312d;border-radius:50%;
+  animation:pillPulse 2s infinite;}
+@keyframes pillPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.5}}
+.hero-h1{font-size:3.5rem;font-weight:900;color:#0f172a;
+  line-height:1.1;letter-spacing:-2.5px;margin-bottom:1.2rem;}
+.hero-h1 em{font-style:normal;color:#de312d;}
+.hero-sub{font-size:1.05rem;color:#475569;margin-bottom:2.5rem;line-height:1.6;}
+.hero-trust{display:flex;justify-content:center;gap:2rem;margin-top:4rem;
+  padding-top:2rem;border-top:1px solid rgba(0,0,0,0.05);}
+.trust-item{display:flex;align-items:center;gap:0.5rem;color:#64748b;
+  font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;}
+.trust-dot{color:#de312d;font-size:0.6rem;}
 
 /* ── BUTTONS ── */
 div[data-testid="stButton"] button[kind="primary"]{
-  background:linear-gradient(135deg,#7c3aed,#2563eb)!important;
+  background:#de312d!important;
   color:#fff!important;border:none!important;border-radius:100px!important;
   padding:0.8rem 2.5rem!important;font-size:1.05rem!important;
   font-weight:700!important;letter-spacing:0.3px!important;
-  box-shadow:0 0 0 0 rgba(124,58,237,0);
-  animation:glow-idle 3s ease-in-out infinite!important;
+  box-shadow:0 4px 15px rgba(222,49,45,0.3);
   transition:transform 0.2s,box-shadow 0.2s!important;}
-@keyframes glow-idle{
-  0%,100%{box-shadow:0 4px 30px rgba(124,58,237,0.35);}
-  50%{box-shadow:0 4px 45px rgba(124,58,237,0.55);}}
 div[data-testid="stButton"] button[kind="primary"]:hover{
   transform:translateY(-2px)!important;
-  box-shadow:0 8px 50px rgba(124,58,237,0.65)!important;}
+  box-shadow:0 6px 25px rgba(222,49,45,0.45)!important;}
 
 /* ── FORM ── */
 [data-testid="stForm"]{background:transparent!important;border:none!important;}
@@ -134,24 +128,20 @@ div[data-testid="stButton"] button[kind="primary"]:hover{
   color:#64748b;text-transform:uppercase;margin-bottom:1rem;
   display:flex;align-items:center;gap:0.5rem;}
 .step-num{width:20px;height:20px;border-radius:50%;
-  background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);
-  color:#7c3aed;font-size:0.68rem;font-weight:800;
+  background:rgba(222,49,45,0.08);border:1px solid rgba(222,49,45,0.2);
+  color:#de312d;font-size:0.68rem;font-weight:800;
   display:inline-flex;align-items:center;justify-content:center;}
 label{color:#475569!important;font-size:0.83rem!important;font-weight:600!important;}
 .stSelectbox>div>div,.stNumberInput>div>div>input{
   background:#f8fafc!important;
   border:1px solid #e2e8f0!important;
   border-radius:10px!important;color:#0f172a!important;}
-.stSlider [data-baseweb="slider"] div{background:#7c3aed!important;}
+.stSlider [data-baseweb="slider"] div{background:#de312d!important;}
 
 /* ── RESULT ── */
 @keyframes fadeScaleIn{
   from{opacity:0;transform:scale(0.94) translateY(16px);}
   to{opacity:1;transform:scale(1) translateY(0);}}
-@keyframes glowRotate{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}}
 @keyframes pricePop{
   0%{opacity:0;transform:scale(0.7);}
   60%{transform:scale(1.06);}
@@ -161,19 +151,17 @@ label{color:#475569!important;font-size:0.83rem!important;font-weight:600!import
   animation:fadeScaleIn 0.6s cubic-bezier(0.16,1,0.3,1) both;}
 .result-glow{
   position:absolute;inset:-2px;border-radius:26px;z-index:0;
-  background:linear-gradient(270deg,#7c3aed,#2563eb,#06b6d4,#7c3aed);
-  background-size:400% 400%;
-  animation:glowRotate 4s ease infinite;
-  filter:blur(2px);opacity:0.85;}
+  background:#de312d;
+  filter:blur(2px);opacity:0.1;}
 .result-card{
   position:relative;z-index:1;background:#ffffff;
   border-radius:24px;padding:3rem 2rem 2.5rem;text-align:center;
   box-shadow:0 20px 25px -5px rgba(0,0,0,0.05),0 10px 10px -5px rgba(0,0,0,0.02);}
-.result-check{font-size:2.5rem;margin-bottom:1rem;color:#7c3aed;
+.result-check{font-size:2.5rem;margin-bottom:1rem;color:#de312d;
   animation:pricePop 0.5s cubic-bezier(0.16,1,0.3,1) 0.3s both;}
 .result-eye{
   font-size:0.72rem;letter-spacing:2.5px;text-transform:uppercase;
-  color:#6d28d9;font-weight:700;margin-bottom:0.8rem;}
+  color:#de312d;font-weight:700;margin-bottom:0.8rem;}
 .result-price{
   font-size:clamp(3rem,7vw,5rem);font-weight:900;
   letter-spacing:-2px;color:#0f172a;line-height:1;
@@ -301,23 +289,32 @@ PAGES=["Home","Predict","Insights","Model"]
 
 
 # ═══════════════════════════ NAVBAR ══════════════════════════════════════════
-st.markdown(f"""
+st.markdown("""
 <div class="carval-header">
   <div class="nav-row-1">
     <div class="brand-box">
+      <div class="brand-icon">🚗</div>
       <div class="brand">Car<span>Val</span></div>
     </div>
-    <div class="search-pill">
-      🔍 &nbsp; Search for Your Car...
-    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+# Top Bar with Search & User Links
+t1,t2,t3=st.columns([1,2,1])
+with t2:
+    search_query = st.text_input("", placeholder="🔍 Search for Your Car...", label_visibility="collapsed")
+    if search_query:
+        st.session_state.page="Predict"
+        st.rerun()
+with t3:
+    st.markdown("""
     <div class="user-links">
       <div>English ▾</div>
       <div>❤</div>
       <div>Login / Register</div>
     </div>
-  </div>
-</div>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 # Secondary Nav Row
 c1,c2,c3=st.columns([1,4,1.2])
@@ -333,7 +330,7 @@ with c2:
 with c3:
     st.markdown('<div class="loc-box">📍 Ludhiana ▾</div>', unsafe_allow_html=True)
 
-st.markdown('<div style="margin-bottom:2rem;"></div>', unsafe_allow_html=True)
+st.markdown('<div style="margin-bottom:1rem;"></div>', unsafe_allow_html=True)
 
 
 # ════════════════════════════ HOME ══════════════════════════════════════════
