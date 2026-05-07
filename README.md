@@ -139,21 +139,6 @@ Opens at: **http://localhost:8501**
 streamlit run app.py --server.address 0.0.0.0 --server.port 8501
 ```
 
----
-
-## 💡 Presentation Tips (Viva)
-
-1. **Explain the problem** – Why predicting used car prices matters in India
-2. **Show data cleaning** – The messy formats (₹ symbols, "Lakh/Crore", "bhp/PS") you handled
-3. **Show EDA charts** – Highlight that newer cars and automatics fetch higher prices
-4. **Model comparison** – Explain why Random Forest/XGBoost beats Linear Regression on this data
-5. **Live prediction demo** – Enter a real car (e.g. 2019 Maruti Swift, 50k km, Petrol, Manual)
-6. **Feature importance** – registered_year, kms_driven, max_power are top predictors
-
----
-
-## 👨‍💻 Tech Stack
-
 `Python 3.10+` · `Pandas` · `NumPy` · `Scikit-learn` · `XGBoost` · `Streamlit` · `Plotly` · `Matplotlib` · `Seaborn`
 
 ---
