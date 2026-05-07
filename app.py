@@ -187,18 +187,6 @@ PAGES=["Home","Predict","Insights","Model"]
 
 
 # ═══════════════════════════ NAVBAR ══════════════════════════════════════════
-st.markdown("""
-<div class="carval-header">
-  <div class="nav-row-1">
-    <div class="brand-box">
-      <div class="brand-icon">🚗</div>
-      <div class="brand">Car<span>Val</span></div>
-    </div>
-  </div>
-</div>
-""", unsafe_allow_html=True)
-
-# ═══════════════════════════ NAVBAR ══════════════════════════════════════════
 st.markdown('<div class="carval-header"><div class="brand">CarVal<span>.</span></div></div>', unsafe_allow_html=True)
 
 # Main Navigation
@@ -325,7 +313,7 @@ elif st.session_state.page=="Insights":
         st.markdown('<div class="insight-desc">Newer cars hold significantly higher resale value. A 3-year-old car can fetch nearly 2x more than a 7-year-old equivalent.</div>', unsafe_allow_html=True)
         yr=df.groupby("year")["price_lakh"].median().reset_index()
         fig=px.area(yr,x="year",y="price_lakh",markers=True,
-                    color_discrete_sequence=["#8b5cf6"],
+                    color_discrete_sequence=["#e01e26"],
                     labels={"year":"Registration Year","price_lakh":"Median Price (₹L)"})
         fig.update_layout(**CS); fig.update_xaxes(gridcolor="rgba(255,255,255,0.04)"); fig.update_yaxes(gridcolor="rgba(255,255,255,0.04)")
         st.plotly_chart(fig,use_container_width=True)
@@ -335,7 +323,7 @@ elif st.session_state.page=="Insights":
         st.markdown('<div class="insight-desc">Higher mileage generally lowers resale value. Cars under 50,000 km command a clear premium over high-mileage vehicles.</div>', unsafe_allow_html=True)
         samp=df.sample(min(2000,len(df)),random_state=42)
         fig=px.scatter(samp,x="kms",y="price_lakh",opacity=0.5,
-                       color="price_lakh",color_continuous_scale="Purp",
+                       color="price_lakh",color_continuous_scale="Reds",
                        labels={"kms":"KMs Driven","price_lakh":"Price (₹L)"})
         fig.update_traces(marker=dict(size=4)); fig.update_layout(**CS)
         st.plotly_chart(fig,use_container_width=True)
@@ -345,7 +333,7 @@ elif st.session_state.page=="Insights":
         st.markdown('<div class="insight-desc">Electric vehicles command the highest resale prices on average, followed by Diesel. CNG and LPG vehicles tend to depreciate faster.</div>', unsafe_allow_html=True)
         fd=df.groupby("fuel_type")["price_lakh"].median().reset_index().sort_values("price_lakh")
         fig=px.bar(fd,x="price_lakh",y="fuel_type",orientation="h",
-                   color_discrete_sequence=["#6d28d9"],
+                   color_discrete_sequence=["#e01e26"],
                    labels={"fuel_type":"Fuel Type","price_lakh":"Median Price (₹L)"})
         fig.update_layout(**CS)
         st.plotly_chart(fig,use_container_width=True)
