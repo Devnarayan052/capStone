@@ -1,0 +1,2830 @@
+{
+  "Audi": {
+    "A6": {
+      "engine": 1968,
+      "power": 188,
+      "mileage": 17.7,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 61
+    },
+    "A4": {
+      "engine": 1968,
+      "power": 168,
+      "mileage": 16.8,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 56
+    },
+    "Q3": {
+      "engine": 1968,
+      "power": 174,
+      "mileage": 15.7,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 52
+    },
+    "Q5": {
+      "engine": 1968,
+      "power": 174,
+      "mileage": 14.2,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 39
+    },
+    "A3": {
+      "engine": 1883,
+      "power": 146,
+      "mileage": 20.1,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 32
+    },
+    "Q7": {
+      "engine": 2967,
+      "power": 245,
+      "mileage": 12.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 31
+    },
+    "A8": {
+      "engine": 2967,
+      "power": 247,
+      "mileage": 14.3,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 6
+    },
+    "Q2": {
+      "engine": 1984,
+      "power": 188,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 6
+    },
+    "RS5": {
+      "engine": 2894,
+      "power": 444,
+      "mileage": 8.8,
+      "body": "Coupe",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 2
+    },
+    "e-tron": {
+      "engine": 1248,
+      "power": 300,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Electric",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "Q8": {
+      "engine": 2995,
+      "power": 340,
+      "mileage": 9.8,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 1
+    },
+    "S5": {
+      "engine": 2995,
+      "power": 328,
+      "mileage": 12.3,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 1
+    }
+  },
+  "BMW": {
+    "3": {
+      "engine": 1995,
+      "power": 188,
+      "mileage": 18.9,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 111
+    },
+    "5": {
+      "engine": 1995,
+      "power": 190,
+      "mileage": 18.1,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 84
+    },
+    "X1": {
+      "engine": 1995,
+      "power": 188,
+      "mileage": 18.3,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 78
+    },
+    "7": {
+      "engine": 2993,
+      "power": 261,
+      "mileage": 16.5,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 32
+    },
+    "X3": {
+      "engine": 1995,
+      "power": 188,
+      "mileage": 16.6,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 31
+    },
+    "X5": {
+      "engine": 2993,
+      "power": 258,
+      "mileage": 16.0,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 30
+    },
+    "6": {
+      "engine": 2496,
+      "power": 258,
+      "mileage": 14.3,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 6
+    },
+    "X7": {
+      "engine": 2998,
+      "power": 335,
+      "mileage": 10.5,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 5
+    },
+    "2": {
+      "engine": 1996,
+      "power": 188,
+      "mileage": 16.7,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 4
+    },
+    "X4": {
+      "engine": 2494,
+      "power": 225,
+      "mileage": 15.6,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 4
+    },
+    "1": {
+      "engine": 1796,
+      "power": 140,
+      "mileage": 18.4,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "iX": {
+      "engine": 1248,
+      "power": 322,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Electric",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 2
+    }
+  },
+  "Bentley": {
+    "Continental": {
+      "engine": 5998,
+      "power": 552,
+      "mileage": 8.6,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 1
+    }
+  },
+  "Chevrolet": {
+    "Beat": {
+      "engine": 1199,
+      "power": 79,
+      "mileage": 18.6,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 54
+    },
+    "Spark": {
+      "engine": 995,
+      "power": 62,
+      "mileage": 18.0,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 34
+    },
+    "Cruze": {
+      "engine": 1991,
+      "power": 148,
+      "mileage": 18.1,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 25
+    },
+    "Aveo": {
+      "engine": 1399,
+      "power": 93,
+      "mileage": 14.5,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 15
+    },
+    "Sail": {
+      "engine": 1199,
+      "power": 82,
+      "mileage": 18.2,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 12
+    },
+    "Enjoy": {
+      "engine": 1399,
+      "power": 99,
+      "mileage": 13.7,
+      "body": "MUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 10
+    },
+    "Tavera": {
+      "engine": 2499,
+      "power": 80,
+      "mileage": 14.8,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 7
+    },
+    "Optra": {
+      "engine": 1598,
+      "power": 103,
+      "mileage": 12.9,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 4
+    },
+    "Captiva": {
+      "engine": 2231,
+      "power": 184,
+      "mileage": 12.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 1
+    }
+  },
+  "Citroen": {
+    "C3": {
+      "engine": 1198,
+      "power": 95,
+      "mileage": 19.3,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 6
+    },
+    "C5": {
+      "engine": 1997,
+      "power": 174,
+      "mileage": 18.6,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 3
+    }
+  },
+  "Daewoo": {
+    "Matiz": {
+      "engine": 796,
+      "power": 53,
+      "mileage": 18.5,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "Datsun": {
+    "RediGO": {
+      "engine": 799,
+      "power": 54,
+      "mileage": 22.7,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 62
+    },
+    "GO": {
+      "engine": 1198,
+      "power": 67,
+      "mileage": 19.4,
+      "body": "MUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 45
+    }
+  },
+  "Fiat": {
+    "Linea": {
+      "engine": 1368,
+      "power": 90,
+      "mileage": 16.0,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 20
+    },
+    "Punto": {
+      "engine": 1248,
+      "power": 75,
+      "mileage": 20.3,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 20
+    },
+    "Avventura": {
+      "engine": 1248,
+      "power": 92,
+      "mileage": 20.5,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 7
+    },
+    "Grande": {
+      "engine": 1248,
+      "power": 75,
+      "mileage": 20.3,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 5
+    },
+    "Palio": {
+      "engine": 1175,
+      "power": 57,
+      "mileage": 15.5,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "Abarth": {
+      "engine": 1368,
+      "power": 140,
+      "mileage": 17.1,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "Force": {
+    "Gurkha": {
+      "engine": 2596,
+      "power": 90,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 4,
+      "sample_count": 3
+    },
+    "One": {
+      "engine": 2650,
+      "power": 81,
+      "mileage": 17.0,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 1
+    }
+  },
+  "Ford": {
+    "Ecosport": {
+      "engine": 1498,
+      "power": 99,
+      "mileage": 21.7,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 320
+    },
+    "Figo": {
+      "engine": 1399,
+      "power": 70,
+      "mileage": 20.0,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 84
+    },
+    "Endeavour": {
+      "engine": 2953,
+      "power": 182,
+      "mileage": 11.4,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 53
+    },
+    "Aspire": {
+      "engine": 1196,
+      "power": 95,
+      "mileage": 18.2,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 37
+    },
+    "Freestyle": {
+      "engine": 1194,
+      "power": 95,
+      "mileage": 19.0,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 28
+    },
+    "Fiesta": {
+      "engine": 1498,
+      "power": 90,
+      "mileage": 17.8,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 25
+    },
+    "Ikon": {
+      "engine": 1597,
+      "power": 92,
+      "mileage": 14.2,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 8
+    },
+    "Mondeo": {
+      "engine": 1999,
+      "power": 88,
+      "mileage": 9.0,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "Fusion": {
+      "engine": 1596,
+      "power": 101,
+      "mileage": 13.6,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 1
+    },
+    "Mustang": {
+      "engine": 4951,
+      "power": 395,
+      "mileage": 13.0,
+      "body": "Coupe",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 1
+    }
+  },
+  "Hindustan": {
+    "Motors": {
+      "engine": 1799,
+      "power": 88,
+      "mileage": 14.0,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "Honda": {
+    "City": {
+      "engine": 1497,
+      "power": 117,
+      "mileage": 17.7,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 781
+    },
+    "Amaze": {
+      "engine": 1199,
+      "power": 89,
+      "mileage": 18.6,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 412
+    },
+    "Jazz": {
+      "engine": 1199,
+      "power": 89,
+      "mileage": 18.7,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 192
+    },
+    "Brio": {
+      "engine": 1198,
+      "power": 87,
+      "mileage": 19.4,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 134
+    },
+    "WR-V": {
+      "engine": 1199,
+      "power": 89,
+      "mileage": 17.5,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 126
+    },
+    "CR-V": {
+      "engine": 2354,
+      "power": 154,
+      "mileage": 12.0,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 37
+    },
+    "Civic": {
+      "engine": 1799,
+      "power": 130,
+      "mileage": 13.9,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 37
+    },
+    "Mobilio": {
+      "engine": 1497,
+      "power": 117,
+      "mileage": 17.3,
+      "body": "MUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 30
+    },
+    "New": {
+      "engine": 2354,
+      "power": 178,
+      "mileage": 11.7,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 27
+    },
+    "BR-V": {
+      "engine": 1497,
+      "power": 117,
+      "mileage": 15.4,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 22
+    }
+  },
+  "Hyundai": {
+    "i20": {
+      "engine": 1197,
+      "power": 82,
+      "mileage": 18.6,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 781
+    },
+    "Grand i10": {
+      "engine": 1197,
+      "power": 82,
+      "mileage": 18.9,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 690
+    },
+    "i10": {
+      "engine": 1197,
+      "power": 79,
+      "mileage": 19.8,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 429
+    },
+    "Creta": {
+      "engine": 1582,
+      "power": 121,
+      "mileage": 15.8,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 427
+    },
+    "Verna": {
+      "engine": 1582,
+      "power": 121,
+      "mileage": 17.4,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 392
+    },
+    "Santro": {
+      "engine": 1086,
+      "power": 62,
+      "mileage": 20.3,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 224
+    },
+    "EON": {
+      "engine": 814,
+      "power": 55,
+      "mileage": 21.1,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 169
+    },
+    "Venue": {
+      "engine": 998,
+      "power": 118,
+      "mileage": 18.1,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 147
+    },
+    "Xcent": {
+      "engine": 1197,
+      "power": 82,
+      "mileage": 19.1,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 133
+    },
+    "Elantra": {
+      "engine": 1797,
+      "power": 148,
+      "mileage": 14.6,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 56
+    },
+    "Aura": {
+      "engine": 1197,
+      "power": 82,
+      "mileage": 20.5,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 47
+    },
+    "Alcazar": {
+      "engine": 1493,
+      "power": 114,
+      "mileage": 18.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 6,
+      "sample_count": 27
+    },
+    "Accent": {
+      "engine": 1495,
+      "power": 94,
+      "mileage": 13.2,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 26
+    },
+    "Tucson": {
+      "engine": 1995,
+      "power": 182,
+      "mileage": 16.4,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 24
+    },
+    "Getz": {
+      "engine": 1341,
+      "power": 83,
+      "mileage": 15.0,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 14
+    },
+    "Santa": {
+      "engine": 2199,
+      "power": 194,
+      "mileage": 13.0,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 10
+    },
+    "Sonata": {
+      "engine": 2359,
+      "power": 198,
+      "mileage": 13.4,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 3
+    },
+    "Elite": {
+      "engine": 1396,
+      "power": 89,
+      "mileage": 22.5,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 2
+    }
+  },
+  "Isuzu": {
+    "D-Max": {
+      "engine": 2499,
+      "power": 134,
+      "mileage": 12.4,
+      "body": "Pickup",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 9
+    },
+    "MU-X": {
+      "engine": 2999,
+      "power": 175,
+      "mileage": 13.8,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 3
+    },
+    "Hi-Lander": {
+      "engine": 1898,
+      "power": 161,
+      "mileage": 18.9,
+      "body": "Pickup",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "Jaguar": {
+    "XF": {
+      "engine": 2179,
+      "power": 188,
+      "mileage": 16.4,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 40
+    },
+    "XJ": {
+      "engine": 2993,
+      "power": 286,
+      "mileage": 10.5,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 16
+    },
+    "XE": {
+      "engine": 1999,
+      "power": 222,
+      "mileage": 13.5,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 14
+    },
+    "F-Pace": {
+      "engine": 1999,
+      "power": 177,
+      "mileage": 16.4,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 10
+    },
+    "XK": {
+      "engine": 5000,
+      "power": 503,
+      "mileage": 6.7,
+      "body": "Jaguar",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 2
+    },
+    "F-TYPE": {
+      "engine": 2995,
+      "power": 376,
+      "mileage": 15.2,
+      "body": "Jaguar",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 2,
+      "sample_count": 1
+    }
+  },
+  "Jeep": {
+    "Compass": {
+      "engine": 1956,
+      "power": 168,
+      "mileage": 16.3,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 158
+    },
+    "Meridian": {
+      "engine": 1956,
+      "power": 170,
+      "mileage": 15.7,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 4
+    },
+    "Wrangler": {
+      "engine": 3604,
+      "power": 280,
+      "mileage": 9.5,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 3
+    }
+  },
+  "Kia": {
+    "Seltos": {
+      "engine": 1493,
+      "power": 113,
+      "mileage": 16.8,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 193
+    },
+    "Sonet": {
+      "engine": 1197,
+      "power": 113,
+      "mileage": 18.2,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 54
+    },
+    "Carens": {
+      "engine": 1353,
+      "power": 138,
+      "mileage": 16.2,
+      "body": "MUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 39
+    },
+    "Carnival": {
+      "engine": 2199,
+      "power": 197,
+      "mileage": 14.1,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 14
+    }
+  },
+  "Land rover": {
+    "Range": {
+      "engine": 1999,
+      "power": 244,
+      "mileage": 15.7,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 36
+    },
+    "Discovery": {
+      "engine": 1999,
+      "power": 188,
+      "mileage": 12.7,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 18
+    },
+    "Freelander": {
+      "engine": 2179,
+      "power": 188,
+      "mileage": 12.3,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 3
+    },
+    "Defender": {
+      "engine": 2997,
+      "power": 296,
+      "mileage": 14.0,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 6,
+      "sample_count": 1
+    }
+  },
+  "Lexus": {
+    "ES": {
+      "engine": 2487,
+      "power": 215,
+      "mileage": 22.4,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 3
+    },
+    "NX": {
+      "engine": 2499,
+      "power": 194,
+      "mileage": 18.3,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "MG": {
+    "Hector": {
+      "engine": 1451,
+      "power": 141,
+      "mileage": 14.0,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 128
+    },
+    "Astor": {
+      "engine": 1498,
+      "power": 108,
+      "mileage": 14.8,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 29
+    },
+    "ZS": {
+      "engine": 1248,
+      "power": 141,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Electric",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 13
+    },
+    "Gloster": {
+      "engine": 1996,
+      "power": 215,
+      "mileage": 12.4,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 6,
+      "sample_count": 9
+    },
+    "Comet": {
+      "engine": 1248,
+      "power": 41,
+      "mileage": 18.9,
+      "body": "Hatchback",
+      "fuel": "Electric",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 1
+    }
+  },
+  "Mahindra": {
+    "XUV500": {
+      "engine": 2179,
+      "power": 140,
+      "mileage": 15.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 278
+    },
+    "Scorpio": {
+      "engine": 2179,
+      "power": 120,
+      "mileage": 15.4,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 97
+    },
+    "Thar": {
+      "engine": 2184,
+      "power": 130,
+      "mileage": 15.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 4,
+      "sample_count": 89
+    },
+    "XUV300": {
+      "engine": 1197,
+      "power": 109,
+      "mileage": 17.0,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 78
+    },
+    "TUV": {
+      "engine": 1493,
+      "power": 100,
+      "mileage": 18.5,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 52
+    },
+    "KUV": {
+      "engine": 1198,
+      "power": 82,
+      "mileage": 18.1,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 6,
+      "sample_count": 51
+    },
+    "Bolero": {
+      "engine": 2523,
+      "power": 65,
+      "mileage": 16.0,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 43
+    },
+    "XUV700": {
+      "engine": 1999,
+      "power": 197,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 26
+    },
+    "Xylo": {
+      "engine": 2498,
+      "power": 112,
+      "mileage": 14.0,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 19
+    },
+    "Marazzo": {
+      "engine": 1497,
+      "power": 121,
+      "mileage": 17.3,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 8,
+      "sample_count": 17
+    },
+    "Ssangyong": {
+      "engine": 2696,
+      "power": 184,
+      "mileage": 11.2,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 12
+    },
+    "Scorpio N": {
+      "engine": 2198,
+      "power": 172,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 9
+    },
+    "e2o": {
+      "engine": 72,
+      "power": 25,
+      "mileage": 115.0,
+      "body": "Hatchback",
+      "fuel": "Electric",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 8
+    },
+    "Quanto": {
+      "engine": 1493,
+      "power": 100,
+      "mileage": 17.2,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 7
+    },
+    "Alturas": {
+      "engine": 2157,
+      "power": 178,
+      "mileage": 12.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 6
+    },
+    "Renault": {
+      "engine": 1426,
+      "power": 70,
+      "mileage": 17.4,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 4
+    },
+    "NuvoSport": {
+      "engine": 1493,
+      "power": 100,
+      "mileage": 17.4,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 3
+    },
+    "Verito": {
+      "engine": 1461,
+      "power": 64,
+      "mileage": 21.0,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 3
+    },
+    "Ingenio": {
+      "engine": 2489,
+      "power": 88,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 2,
+      "sample_count": 2
+    },
+    "Jeep": {
+      "engine": 2318,
+      "power": 88,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 6,
+      "sample_count": 2
+    },
+    "Scorpio Classic": {
+      "engine": 2184,
+      "power": 130,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 1
+    },
+    "Supro": {
+      "engine": 909,
+      "power": 45,
+      "mileage": 23.5,
+      "body": "Minivans",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "Maruti": {
+    "Wagon R": {
+      "engine": 998,
+      "power": 67,
+      "mileage": 20.5,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 683
+    },
+    "Swift": {
+      "engine": 1197,
+      "power": 83,
+      "mileage": 22.4,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 681
+    },
+    "Swift Dzire": {
+      "engine": 1197,
+      "power": 82,
+      "mileage": 22.2,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 594
+    },
+    "Baleno": {
+      "engine": 1197,
+      "power": 83,
+      "mileage": 21.4,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 544
+    },
+    "Ciaz": {
+      "engine": 1373,
+      "power": 91,
+      "mileage": 20.7,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 316
+    },
+    "Alto 800": {
+      "engine": 796,
+      "power": 47,
+      "mileage": 22.1,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 306
+    },
+    "Celerio": {
+      "engine": 998,
+      "power": 66,
+      "mileage": 25.0,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 304
+    },
+    "Vitara": {
+      "engine": 1248,
+      "power": 88,
+      "mileage": 24.3,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 239
+    },
+    "Alto K10": {
+      "engine": 998,
+      "power": 67,
+      "mileage": 23.9,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 184
+    },
+    "Ertiga": {
+      "engine": 1373,
+      "power": 91,
+      "mileage": 20.5,
+      "body": "MUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 184
+    },
+    "SX4": {
+      "engine": 1462,
+      "power": 103,
+      "mileage": 21.4,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 132
+    },
+    "Ignis": {
+      "engine": 1197,
+      "power": 82,
+      "mileage": 20.9,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 108
+    },
+    "Ritz": {
+      "engine": 1197,
+      "power": 86,
+      "mileage": 18.5,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 106
+    },
+    "Alto": {
+      "engine": 796,
+      "power": 46,
+      "mileage": 19.7,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 91
+    },
+    "S-Presso": {
+      "engine": 998,
+      "power": 66,
+      "mileage": 21.7,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 82
+    },
+    "Eeco": {
+      "engine": 1196,
+      "power": 72,
+      "mileage": 16.1,
+      "body": "Minivans",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 75
+    },
+    "Zen": {
+      "engine": 998,
+      "power": 67,
+      "mileage": 19.0,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 61
+    },
+    "XL6": {
+      "engine": 1462,
+      "power": 103,
+      "mileage": 19.0,
+      "body": "MUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 6,
+      "sample_count": 48
+    },
+    "A-Star": {
+      "engine": 998,
+      "power": 66,
+      "mileage": 19.0,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 24
+    },
+    "800": {
+      "engine": 796,
+      "power": 37,
+      "mileage": 16.1,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 4,
+      "sample_count": 19
+    },
+    "Omni": {
+      "engine": 796,
+      "power": 35,
+      "mileage": 16.8,
+      "body": "Minivans",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 8,
+      "sample_count": 14
+    },
+    "Brezza": {
+      "engine": 1462,
+      "power": 102,
+      "mileage": 19.9,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 10
+    },
+    "Estilo": {
+      "engine": 1061,
+      "power": 88,
+      "mileage": 19.5,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 6
+    },
+    "Grand": {
+      "engine": 1462,
+      "power": 91,
+      "mileage": 26.6,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 6
+    },
+    "Gypsy": {
+      "engine": 1298,
+      "power": 80,
+      "mileage": 12.0,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 8,
+      "sample_count": 3
+    },
+    "Jimny": {
+      "engine": 1462,
+      "power": 103,
+      "mileage": 16.4,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 3
+    },
+    "Esteem": {
+      "engine": 1298,
+      "power": 88,
+      "mileage": 15.9,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "Versa": {
+      "engine": 1298,
+      "power": 83,
+      "mileage": 11.3,
+      "body": "Maruti",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 8,
+      "sample_count": 1
+    }
+  },
+  "Mercedes-Benz": {
+    "C-Class": {
+      "engine": 1991,
+      "power": 181,
+      "mileage": 14.7,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 111
+    },
+    "E-Class": {
+      "engine": 2143,
+      "power": 198,
+      "mileage": 14.2,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 109
+    },
+    "GLC": {
+      "engine": 1991,
+      "power": 194,
+      "mileage": 17.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 39
+    },
+    "CLA": {
+      "engine": 2143,
+      "power": 136,
+      "mileage": 17.9,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 33
+    },
+    "GLA": {
+      "engine": 1991,
+      "power": 183,
+      "mileage": 13.7,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 30
+    },
+    "GLE": {
+      "engine": 2143,
+      "power": 241,
+      "mileage": 17.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 30
+    },
+    "S-Class": {
+      "engine": 2987,
+      "power": 255,
+      "mileage": 13.5,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 27
+    },
+    "M-Class": {
+      "engine": 2143,
+      "power": 203,
+      "mileage": 15.3,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 25
+    },
+    "GLS": {
+      "engine": 2987,
+      "power": 258,
+      "mileage": 11.0,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 18
+    },
+    "B": {
+      "engine": 1595,
+      "power": 121,
+      "mileage": 14.8,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 12
+    },
+    "GL-Class": {
+      "engine": 2987,
+      "power": 255,
+      "mileage": 11.3,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 10
+    },
+    "AMG": {
+      "engine": 1991,
+      "power": 302,
+      "mileage": 18.9,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 8
+    },
+    "A": {
+      "engine": 2143,
+      "power": 107,
+      "mileage": 20.0,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 6
+    },
+    "A-Class": {
+      "engine": 1332,
+      "power": 161,
+      "mileage": 18.9,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 3
+    },
+    "CLS-Class": {
+      "engine": 2143,
+      "power": 204,
+      "mileage": 19.4,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 3
+    },
+    "EQC": {
+      "engine": 1248,
+      "power": 402,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Electric",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "SLK-Class": {
+      "engine": 4480,
+      "power": 364,
+      "mileage": 15.1,
+      "body": "Mercedes-Benz",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 2,
+      "sample_count": 2
+    },
+    "EQS": {
+      "engine": 1248,
+      "power": 516,
+      "mileage": 18.9,
+      "body": "Sedan",
+      "fuel": "Electric",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 1
+    },
+    "G": {
+      "engine": 2925,
+      "power": 282,
+      "mileage": 8.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 1
+    },
+    "GLB": {
+      "engine": 1998,
+      "power": 188,
+      "mileage": 18.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 1
+    },
+    "V-Class": {
+      "engine": 1950,
+      "power": 161,
+      "mileage": 16.0,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 6,
+      "sample_count": 1
+    }
+  },
+  "Mini": {
+    "Cooper": {
+      "engine": 1998,
+      "power": 184,
+      "mileage": 17.5,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 9
+    },
+    "3": {
+      "engine": 1998,
+      "power": 189,
+      "mileage": 17.3,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 3
+    },
+    "5": {
+      "engine": 1496,
+      "power": 114,
+      "mileage": 20.7,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "Mitsubishi": {
+    "Pajero": {
+      "engine": 2477,
+      "power": 176,
+      "mileage": 13.5,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 15
+    },
+    "Outlander": {
+      "engine": 2360,
+      "power": 170,
+      "mileage": 11.3,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 5
+    },
+    "Lancer": {
+      "engine": 1733,
+      "power": 77,
+      "mileage": 14.2,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 4
+    },
+    "Cedia": {
+      "engine": 1999,
+      "power": 114,
+      "mileage": 13.9,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 2
+    }
+  },
+  "Nissan": {
+    "Micra": {
+      "engine": 1198,
+      "power": 75,
+      "mileage": 19.3,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 61
+    },
+    "Magnite": {
+      "engine": 999,
+      "power": 71,
+      "mileage": 18.8,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 53
+    },
+    "Terrano": {
+      "engine": 1461,
+      "power": 102,
+      "mileage": 19.6,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 38
+    },
+    "Sunny": {
+      "engine": 1498,
+      "power": 98,
+      "mileage": 17.7,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 26
+    },
+    "Kicks": {
+      "engine": 1461,
+      "power": 108,
+      "mileage": 14.2,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 7
+    },
+    "Teana": {
+      "engine": 2496,
+      "power": 180,
+      "mileage": 11.1,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 2
+    }
+  },
+  "Opelcorsa": {
+    "1.4Gsi": {
+      "engine": 1389,
+      "power": 88,
+      "mileage": 14.2,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "1.6": {
+      "engine": 1589,
+      "power": 93,
+      "mileage": 13.8,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "Porsche": {
+    "Cayenne": {
+      "engine": 2995,
+      "power": 380,
+      "mileage": 13.4,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 11
+    },
+    "Macan": {
+      "engine": 2439,
+      "power": 314,
+      "mileage": 13.6,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "Panamera": {
+      "engine": 2967,
+      "power": 300,
+      "mileage": 17.9,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 1
+    },
+    "Taycan": {
+      "engine": 1248,
+      "power": 322,
+      "mileage": 18.9,
+      "body": "Coupe",
+      "fuel": "Electric",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "Renault": {
+    "KWID": {
+      "engine": 999,
+      "power": 67,
+      "mileage": 23.0,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 292
+    },
+    "Duster": {
+      "engine": 1461,
+      "power": 104,
+      "mileage": 19.6,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 169
+    },
+    "Triber": {
+      "engine": 999,
+      "power": 71,
+      "mileage": 20.0,
+      "body": "MUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 82
+    },
+    "Kiger": {
+      "engine": 999,
+      "power": 99,
+      "mileage": 19.2,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 42
+    },
+    "Scala": {
+      "engine": 1461,
+      "power": 85,
+      "mileage": 21.6,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 12
+    },
+    "Lodgy": {
+      "engine": 1461,
+      "power": 84,
+      "mileage": 21.0,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 8,
+      "sample_count": 9
+    },
+    "Pulse": {
+      "engine": 1461,
+      "power": 63,
+      "mileage": 23.1,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 9
+    },
+    "Captur": {
+      "engine": 1461,
+      "power": 108,
+      "mileage": 20.4,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 8
+    },
+    "Fluence": {
+      "engine": 1461,
+      "power": 105,
+      "mileage": 21.8,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 5
+    },
+    "Koleos": {
+      "engine": 1995,
+      "power": 148,
+      "mileage": 13.7,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 2
+    }
+  },
+  "Skoda": {
+    "Rapid": {
+      "engine": 1498,
+      "power": 104,
+      "mileage": 20.5,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 139
+    },
+    "Superb": {
+      "engine": 1798,
+      "power": 158,
+      "mileage": 13.7,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 56
+    },
+    "Octavia": {
+      "engine": 1798,
+      "power": 177,
+      "mileage": 15.1,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 49
+    },
+    "Kushaq": {
+      "engine": 999,
+      "power": 114,
+      "mileage": 19.2,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 24
+    },
+    "Slavia": {
+      "engine": 999,
+      "power": 114,
+      "mileage": 18.4,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 21
+    },
+    "Fabia": {
+      "engine": 1199,
+      "power": 75,
+      "mileage": 17.5,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 15
+    },
+    "Kodiaq": {
+      "engine": 1968,
+      "power": 148,
+      "mileage": 16.2,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 15
+    },
+    "Laura": {
+      "engine": 1896,
+      "power": 108,
+      "mileage": 17.0,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 14
+    },
+    "Yeti": {
+      "engine": 1968,
+      "power": 138,
+      "mileage": 17.7,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 3
+    }
+  },
+  "Tata": {
+    "Nexon": {
+      "engine": 1199,
+      "power": 113,
+      "mileage": 17.3,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 223
+    },
+    "Tiago": {
+      "engine": 1199,
+      "power": 84,
+      "mileage": 23.8,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 211
+    },
+    "Altroz": {
+      "engine": 1199,
+      "power": 87,
+      "mileage": 19.3,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 93
+    },
+    "Tigor": {
+      "engine": 1199,
+      "power": 84,
+      "mileage": 20.3,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 77
+    },
+    "Harrier": {
+      "engine": 1956,
+      "power": 168,
+      "mileage": 16.4,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 60
+    },
+    "New": {
+      "engine": 1956,
+      "power": 168,
+      "mileage": 14.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 55
+    },
+    "Indica": {
+      "engine": 1396,
+      "power": 70,
+      "mileage": 18.0,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 52
+    },
+    "Zest": {
+      "engine": 1193,
+      "power": 89,
+      "mileage": 17.6,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 41
+    },
+    "Indigo": {
+      "engine": 1396,
+      "power": 69,
+      "mileage": 19.1,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 38
+    },
+    "Nano": {
+      "engine": 624,
+      "power": 37,
+      "mileage": 25.4,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 4,
+      "sample_count": 36
+    },
+    "Hexa": {
+      "engine": 2179,
+      "power": 154,
+      "mileage": 17.6,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 33
+    },
+    "Manza": {
+      "engine": 1248,
+      "power": 89,
+      "mileage": 19.0,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 28
+    },
+    "Punch": {
+      "engine": 1199,
+      "power": 87,
+      "mileage": 20.1,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 28
+    },
+    "Safari": {
+      "engine": 2179,
+      "power": 148,
+      "mileage": 14.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 20
+    },
+    "Sumo": {
+      "engine": 2568,
+      "power": 69,
+      "mileage": 14.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 4
+    },
+    "Bolt": {
+      "engine": 1248,
+      "power": 74,
+      "mileage": 22.9,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 3
+    },
+    "Aria": {
+      "engine": 2179,
+      "power": 138,
+      "mileage": 13.7,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 7,
+      "sample_count": 2
+    },
+    "Xenon": {
+      "engine": 2956,
+      "power": 138,
+      "mileage": 13.5,
+      "body": "Pickup",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "Movus": {
+      "engine": 2179,
+      "power": 118,
+      "mileage": 15.2,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 9,
+      "sample_count": 1
+    },
+    "Winger": {
+      "engine": 1948,
+      "power": 90,
+      "mileage": 10.7,
+      "body": "Tata",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 14,
+      "sample_count": 1
+    },
+    "Yodha": {
+      "engine": 2956,
+      "power": 85,
+      "mileage": 18.9,
+      "body": "Pickup",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 2,
+      "sample_count": 1
+    }
+  },
+  "Toyota": {
+    "Innova Crysta": {
+      "engine": 2393,
+      "power": 148,
+      "mileage": 12.0,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 150
+    },
+    "Fortuner": {
+      "engine": 2982,
+      "power": 171,
+      "mileage": 12.9,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 129
+    },
+    "Etios": {
+      "engine": 1364,
+      "power": 79,
+      "mileage": 17.7,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 116
+    },
+    "Innova": {
+      "engine": 2494,
+      "power": 101,
+      "mileage": 13.0,
+      "body": "MUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 8,
+      "sample_count": 101
+    },
+    "Corolla Altis": {
+      "engine": 1798,
+      "power": 138,
+      "mileage": 14.3,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 95
+    },
+    "Yaris": {
+      "engine": 1496,
+      "power": 106,
+      "mileage": 17.8,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 40
+    },
+    "Urban": {
+      "engine": 1462,
+      "power": 103,
+      "mileage": 17.0,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 36
+    },
+    "Glanza": {
+      "engine": 1197,
+      "power": 82,
+      "mileage": 21.0,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 26
+    },
+    "Camry": {
+      "engine": 2494,
+      "power": 165,
+      "mileage": 19.2,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 17
+    },
+    "Corolla": {
+      "engine": 1794,
+      "power": 125,
+      "mileage": 13.4,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 6
+    },
+    "Hyryder": {
+      "engine": 1490,
+      "power": 91,
+      "mileage": 28.0,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 4
+    },
+    "Qualis": {
+      "engine": 2446,
+      "power": 75,
+      "mileage": 13.1,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 8,
+      "sample_count": 4
+    },
+    "Land": {
+      "engine": 2982,
+      "power": 171,
+      "mileage": 11.0,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 1
+    }
+  },
+  "Volkswagen": {
+    "Polo": {
+      "engine": 1198,
+      "power": 75,
+      "mileage": 17.2,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 257
+    },
+    "Vento": {
+      "engine": 1598,
+      "power": 104,
+      "mileage": 16.9,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 165
+    },
+    "Ameo": {
+      "engine": 1198,
+      "power": 75,
+      "mileage": 19.4,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 53
+    },
+    "Taigun": {
+      "engine": 999,
+      "power": 114,
+      "mileage": 18.4,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 31
+    },
+    "Jetta": {
+      "engine": 1968,
+      "power": 138,
+      "mileage": 17.0,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 15
+    },
+    "Tiguan": {
+      "engine": 1968,
+      "power": 141,
+      "mileage": 16.6,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 12
+    },
+    "Virtus": {
+      "engine": 999,
+      "power": 114,
+      "mileage": 18.1,
+      "body": "Sedan",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 9
+    },
+    "Passat": {
+      "engine": 1968,
+      "power": 168,
+      "mileage": 17.9,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 8
+    },
+    "T-Roc": {
+      "engine": 1498,
+      "power": 148,
+      "mileage": 18.4,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 3
+    },
+    "CrossPolo": {
+      "engine": 1198,
+      "power": 74,
+      "mileage": 19.3,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Manual",
+      "seats": 5,
+      "sample_count": 2
+    },
+    "Beetle": {
+      "engine": 1984,
+      "power": 114,
+      "mileage": 11.0,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 4,
+      "sample_count": 1
+    },
+    "GTI": {
+      "engine": 1798,
+      "power": 189,
+      "mileage": 16.3,
+      "body": "Hatchback",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 1
+    },
+    "Touareg": {
+      "engine": 2967,
+      "power": 242,
+      "mileage": 8.7,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 1
+    }
+  },
+  "Volvo": {
+    "S60": {
+      "engine": 1984,
+      "power": 190,
+      "mileage": 19.6,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 16
+    },
+    "XC60": {
+      "engine": 1984,
+      "power": 232,
+      "mileage": 11.2,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 13
+    },
+    "XC": {
+      "engine": 1969,
+      "power": 235,
+      "mileage": 17.2,
+      "body": "SUV",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 7,
+      "sample_count": 9
+    },
+    "XC40": {
+      "engine": 1969,
+      "power": 190,
+      "mileage": 12.2,
+      "body": "SUV",
+      "fuel": "Petrol",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 9
+    },
+    "S90": {
+      "engine": 1969,
+      "power": 190,
+      "mileage": 18.0,
+      "body": "Sedan",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 5
+    },
+    "V40": {
+      "engine": 1969,
+      "power": 150,
+      "mileage": 16.8,
+      "body": "Hatchback",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 5
+    },
+    "V90": {
+      "engine": 1969,
+      "power": 235,
+      "mileage": 12.5,
+      "body": "Wagon",
+      "fuel": "Diesel",
+      "trans": "Automatic",
+      "seats": 5,
+      "sample_count": 2
+    }
+  }
+}

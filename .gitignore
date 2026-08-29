@@ -3,8 +3,6 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .eggs/
-dist/
-build/
 *.so
 
 # Virtual environments
@@ -22,12 +20,18 @@ env/
 .DS_Store
 Thumbs.db
 
-# Large model files (optional – remove if you want to push them)
-# models/*.pkl
-
 # Exports
 exports/
 
 # IDE
 .vscode/
 .idea/
+
+# Node / Vite (client build artifacts — NOT ignored so Vercel can cache)
+client/node_modules/
+client/.vercel/
+
+# Render / Vercel secrets
+.env
+.env.local
+.env.production

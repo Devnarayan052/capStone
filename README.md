@@ -14,49 +14,57 @@ Built on **17,448 real car listings** across multiple Indian cities.
 
 ```
 capstone/
-├── data/
-│   └── car_resale_prices.csv      # Raw dataset
-├── models/
-│   ├── best_model.pkl             # Trained best model
-│   ├── model_columns.pkl          # Feature column names
-│   ├── model_metrics.json         # All model metrics
-│   └── best_model_name.txt        # Name of best model
-├── charts/
-│   ├── price_vs_year.png
-│   ├── price_vs_kms.png
-│   ├── price_by_fuel.png
-│   ├── price_by_transmission.png
-│   ├── correlation_heatmap.png
-│   └── feature_importance.png
-├── preprocess.py                  # Data cleaning pipeline
-├── train.py                       # Model training & evaluation
-├── app.py                         # Streamlit web application
-├── requirements.txt               # Python dependencies
-└── README.md
+├── client/                      # React + Vite Frontend
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── src/
+│   │   ├── App.jsx
+│   │   └── ...
+│   └── ...
+├── server/                      # Python Backend & ML Pipeline
+│   ├── main.py                  # FastAPI server
+│   ├── app.py                   # Streamlit dashboard
+│   ├── preprocess.py            # Preprocessing script
+│   ├── train.py                 # Training script
+│   ├── requirements.txt         # Backend dependencies
+│   ├── data/                    # Dataset directory
+│   │   └── car_resale_prices.csv
+│   ├── models/                  # Saved models & metrics
+│   │   ├── best_model.pkl
+│   │   └── ...
+│   └── charts/                  # Generated EDA charts
+│       ├── correlation_heatmap.png
+│       └── ...
+├── docs/                        # Project documentation / personal files
+│   └── Dev_Narayan_Cover_Letter.pdf   # Cover Letter / Application
+├── .gitignore                   # Global gitignore configuration
+└── README.md                    # Main project overview
 ```
 
 ---
 
 ## ⚙️ Setup & Installation
 
-### Step 1 – Clone / Navigate to project
+### Option A: Running the Python Streamlit Dashboard (Standalone)
+
+#### Step 1 – Navigate to server directory
 ```bash
-cd /Users/devnarayan/Desktop/capstone
+cd /Users/devnarayan/Desktop/capstone/server
 ```
 
-### Step 2 – Create virtual environment (recommended)
+#### Step 2 – Create virtual environment (recommended)
 ```bash
 python3 -m venv venv
 source venv/bin/activate        # Mac/Linux
 # venv\Scripts\activate         # Windows
 ```
 
-### Step 3 – Install dependencies
+#### Step 3 – Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 4 – Train the model
+#### Step 4 – Train the model
 ```bash
 python train.py
 ```
@@ -67,11 +75,29 @@ This will:
 - Save model to `models/best_model.pkl`
 - Generate EDA charts in `charts/`
 
-### Step 5 – Launch the web app
+#### Step 5 – Launch the Streamlit dashboard
 ```bash
 streamlit run app.py
 ```
 Opens at: **http://localhost:8501**
+
+### Option B: Running the Client-Server Web Application (FastAPI + React)
+
+#### 1. Start the FastAPI Backend
+```bash
+cd /Users/devnarayan/Desktop/capstone/server
+source venv/bin/activate
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+Opens at: **http://localhost:8000**
+
+#### 2. Start the React Frontend
+```bash
+cd /Users/devnarayan/Desktop/capstone/client
+npm install
+npm run dev
+```
+Opens at: **http://localhost:5173** (or the port specified in terminal)
 
 ---
 
