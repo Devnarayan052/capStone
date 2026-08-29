@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from pathlib import Path
 from preprocess import OWNER_ORDER
 
-app = FastAPI(title="Used Car Valuation API")
+app = FastAPI(title="CarVal AI — Used Vehicle Valuation API")
 
 app.add_middleware(
     CORSMiddleware,

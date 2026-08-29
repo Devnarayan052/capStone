@@ -1,6 +1,6 @@
-# AutoVal AI — Frontend Client
+# CarVal AI — Frontend Client
 
-The frontend for **AutoVal AI**, a modern, high-performance used vehicle price prediction web application built with **React 19**, **Vite**, and an automotive-inspired **Obsidian Charcoal & Warm Gold** design system.
+The frontend for **CarVal AI**, a modern, high-performance used vehicle price prediction web application built with **React 19**, **Vite**, and an automotive-inspired **Obsidian Charcoal & Warm Gold** design system.
 
 ---
 

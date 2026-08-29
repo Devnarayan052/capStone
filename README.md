@@ -1,4 +1,4 @@
-# 🚗 AutoVal AI — Intelligent Used Vehicle Valuation Platform
+# 🚗 CarVal AI — Intelligent Used Vehicle Valuation Platform
 
 <div align="center">
 
@@ -20,7 +20,7 @@
 
 ## 📌 Executive Summary
 
-**AutoVal AI** solves the opaque pricing dynamics of the Indian pre-owned automobile market. Trained on **17,448 verified transaction records** across 13 major cities, the platform captures non-linear vehicle depreciation curves, regional demand multipliers, and powertrain wear factors.
+**CarVal AI** solves the opaque pricing dynamics of the Indian pre-owned automobile market. Trained on **17,448 verified transaction records** across 13 major cities, the platform captures non-linear vehicle depreciation curves, regional demand multipliers, and powertrain wear factors.
 
 By pairing an **XGBoost ensemble regressor ($R^2 = 0.9501$, $\text{MAE} = \text{₹ }0.91\text{ Lakh}$)** with an intelligent **server-side specifications lookup table (34 brands, 276 vehicle models)**, the platform delivers instantaneous fair-market valuations without requiring users to manually lookup technical engine specifications.
 
@@ -43,7 +43,7 @@ By pairing an **XGBoost ensemble regressor ($R^2 = 0.9501$, $\text{MAE} = \text{
 ```mermaid
 flowchart TD
     subgraph Client ["Frontend Layer (React 19 + Vite)"]
-        UI["AutoVal AI Web Client"]
+        UI["CarVal AI Web Client"]
         TypeAhead["Brand / Model Type-Ahead"]
         History["LocalStorage History"]
     end
@@ -257,6 +257,6 @@ capStone/
 
 <div align="center">
 
-*AutoVal AI — Built with precision for transparency in automotive valuations.*
+*CarVal AI — Built with precision for transparency in automotive valuations.*
 
 </div>

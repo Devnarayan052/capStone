@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: autoval-api
+    name: carval-api
     runtime: python
     rootDir: server
     buildCommand: pip install -r requirements.txt
