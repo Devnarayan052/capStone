@@ -211,21 +211,27 @@ The backend is built on **FastAPI** (`server/main.py`) running on port `8000`.
 
 | Method | Path | Purpose | Authentication | Request Body / Query | Success Response (200 OK) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `POST` | `/predict` | Predict used car resale price (supports slim 4-5 fields with auto-fill or full manual overrides) | `None` (Public) | `PredictionRequest` (JSON) | `{"price_lakh": float, "range_low": float, "range_high": float, "model_name": str, "confidence_score": int, "vehicle_age": int, "derived_specs": dict}` |
-| `GET` | `/car-models` | Retrieve list of all 276 car models with sample counts and body/fuel profiles | `None` (Public) | None | `[{"brand_model": str, "brand": str, "model": str, "sample_count": int, "body": str, "fuel": str, "trans": str}]` |
-| `GET` | `/car-specs` | Retrieve median/mode specifications for a given model | `None` (Public) | `?brand_model=X` or `?brand=X&model=Y` | `{"brand": str, "model": str, "engine": int, "power": int, "mileage": float, "body": str, "fuel": str, "trans": str, "seats": int, "sample_count": int}` |
+| `POST` | `/predict` | Predict used car resale price (split brand/model, fuel, trans, seats, mileage with server-side engine/power lookup) | `None` (Public) | `PredictionRequest` (JSON) | `{"price_lakh": float, "range_low": float, "range_high": float, "model_name": str, "confidence_score": int, "vehicle_age": int, "derived_specs": dict}` |
+| `GET` | `/brands` | Retrieve sorted list of all 34 car manufacturers in database | `None` (Public) | None | `["Audi", "BMW", "Honda", "Hyundai", "Maruti", ...]` |
+| `GET` | `/models` | Search models under brand with debounced type-ahead substring matching (capped at 8) | `None` (Public) | `?brand=X&q=Y` | `["Swift", "Baleno", "Brezza", ...]` |
+| `GET` | `/car-specs` | Retrieve median/mode specifications for a given brand and model | `None` (Public) | `?brand=X&model=Y` | `{"brand": str, "model": str, "engine": int, "power": int, "mileage": float, "body": str, "fuel": str, "trans": str, "seats": int, "sample_count": int}` |
 | `GET` | `/metrics` | Retrieve model evaluation metrics | `None` (Public) | None | `{"best": "XGBoost", "models": [{"name": str, "r2": float, "rmse": float, "mae": float, "cv_r2": float, "cv_std": float}]}` |
-| `GET` | `/presets` | Retrieve popular car presets | `None` (Public) | None | List of preset objects with brand, engine, power, mileage, body, city |
-| `GET` | `/health` | Server & model health status | `None` (Public) | None | `{"status": "ok", "model_loaded": bool, "model_name": str, "features_count": int, "car_specs_count": int}` |
+| `GET` | `/presets` | Retrieve popular car presets | `None` (Public) | None | List of preset objects with brand, model, year, kms, city |
+| `GET` | `/health` | Server & model health status | `None` (Public) | None | `{"status": "ok", "model_loaded": bool, "model_name": str, "features_count": int, "car_specs_brands": int, "car_specs_models": int}` |
 | `GET` | `/docs` | Interactive Swagger UI docs | `None` (Public) | None | HTML Swagger UI interface |
 | `GET` | `/openapi.json` | OpenAPI 3.1 specification | `None` (Public) | None | JSON schema definitions |
 
 ### 6.2 Prediction Request Payload Example (`POST /predict`)
 ```json
 {
-  "brand_model": "Hyundai Creta",
+  "brand": "Hyundai",
+  "model": "Creta",
   "year": 2022,
   "kms": 32000,
+  "fuel": "Petrol",
+  "trans": "Manual",
+  "seats": 5,
+  "mileage": 15.8,
   "city": "Mumbai",
   "owner": "1st Owner"
 }
