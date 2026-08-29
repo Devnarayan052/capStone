@@ -9,11 +9,10 @@
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://client-xi-indol-44.vercel.app)
 [![Render](https://img.shields.io/badge/Render-Live_API-46E3B7.svg?style=for-the-badge&logo=render&logoColor=black)](https://carval-qaph.onrender.com)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
 **An enterprise-grade, end-to-end Machine Learning platform for predicting used vehicle resale prices across major Indian metropolitan markets.**
 
-[🌐 Live Web App](https://client-xi-indol-44.vercel.app) • [⚡ Production API](https://carval-qaph.onrender.com) • [📖 Interactive Swagger Docs](https://carval-qaph.onrender.com/docs) • [🚀 Deployment Guide](DEPLOYMENT.md)
+[🌐 Live Web App](https://client-xi-indol-44.vercel.app) • [⚡ Production API](https://carval-qaph.onrender.com) • [📖 Interactive Swagger Docs](https://carval-qaph.onrender.com/docs)
 
 </div>
 
@@ -211,8 +210,6 @@ Streamlit EDA dashboard runs locally at **`http://localhost:8501`**.
 | **Backend** | **Render** | Python 3.11 web service (`render.yaml`), Uvicorn ASGI | [carval-qaph.onrender.com](https://carval-qaph.onrender.com) |
 | **Custom Domain** | **GoDaddy / DNS** | `A` record (`76.76.21.21`), `CNAME` (`cname.vercel-dns.com`) | `carval.co.in` |
 
-For complete domain and environment setup instructions, refer to [`DEPLOYMENT.md`](DEPLOYMENT.md).
-
 ---
 
 ## 📂 Repository Structure
@@ -244,8 +241,6 @@ capStone/
 │   ├── requirements.txt         # Production backend dependencies
 │   └── train.py                 # Multi-model training & evaluation pipeline
 ├── docs/                        # Project documentation & reference reports
-├── DEPLOYMENT.md                # Step-by-step production deployment guide
-├── PROJECT_CONTEXT.md           # Comprehensive technical architecture SSoT
 ├── render.yaml                  # Render Infrastructure-as-Code specification
 └── README.md                    # Root project documentation
 ```
