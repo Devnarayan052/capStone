@@ -13,11 +13,13 @@ app = FastAPI(title="Used Car Valuation API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",        # Local dev
+        "http://localhost:5173",
         "http://localhost:3000",
-        "https://carval.co.in",         # Custom domain
+        "https://carval.co.in",
         "https://www.carval.co.in",
-        "https://*.vercel.app",         # Vercel preview deployments
+        "https://client-xi-indol-44.vercel.app",
+        "https://client-devnarayansuman052-5815s-projects.vercel.app",
+        "https://*.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
