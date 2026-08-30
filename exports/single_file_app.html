@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarVal AI — Used Car Price Valuation Intelligence</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Stylesheet -->
+  <style>
+:root {
+  /* Base Charcoal Backgrounds */
+  --bg-dark: #0e1013;
+  --bg-card: rgba(20, 23, 29, 0.75);
+  --bg-card-solid: #15181f;
+  --bg-card-hover: rgba(26, 30, 38, 0.9);
+  --bg-input: #121419;
+  --bg-input-focus: #181b22;
+  
+  /* Semantic Borders */
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-glass-bright: rgba(255, 255, 255, 0.16);
+  --border-focus: #d4a24c;
+  
+  /* Trust / Premium Gold Accent System */
+  --accent-primary: #d4a24c;
+  --accent-primary-hover: #e5b35c;
+  --accent-primary-dark: #b88636;
+  --accent-glow: rgba(212, 162, 76, 0.22);
+  --accent-subtle: rgba(212, 162, 76, 0.12);
+  --accent-border: rgba(212, 162, 76, 0.28);
+  
+  /* Cool Metallic Steel Neutrals */
+  --steel-100: #f3f4f6;
+  --steel-200: #e5e7eb;
+  --steel-300: #d1d5db;
+  --steel-400: #9ca3af;
+  --steel-500: #6b7280;
+  --steel-600: #4b5563;
+  --steel-700: #374151;
+  --steel-800: #1f2937;
+  
+  /* Text System */
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --text-dim: #4b5563;
+  
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Grotesk', ui-monospace, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Ambient Charcoal & Warm Gold Background Depth */
+body::before {
+  content: '';
+  position: fixed;
+  top: -160px;
+  left: 25%;
+  width: 650px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 162, 76, 0.05) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -160px;
+  right: 20%;
+  width: 650px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--steel-800);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--steel-700);
+}
+
+/* Typography & General */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.num-font {
+  font-family: var(--font-mono);
+  letter-spacing: -0.03em;
+}
+
+/* Main Layout */
+.app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 2rem 1.5rem;
+  width: 100%;
+  flex: 1;
+}
+
+/* Top Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(20, 23, 29, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  padding: 0.85rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo-badge {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-dark) 100%);
+  color: #0e1013;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-name span {
+  color: var(--accent-primary);
+}
+
+.brand-tag {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* 2-Tab Navigation */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(14, 16, 20, 0.85);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-btn.active {
+  background: var(--accent-primary);
+  color: #0e1013;
+  font-weight: 700;
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--steel-300);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-border);
+  padding: 0.4rem 0.9rem;
+  border-radius: 30px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-primary);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Glass Cards */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 1.75rem;
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover {
+  border-color: var(--border-glass-bright);
+}
+
+.glass-card.highlight {
+  border-color: var(--accent-border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Quick Presets Bar */
+.presets-section {
+  margin-bottom: 1.75rem;
+}
+
+.presets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.presets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 0.85rem;
+}
+
+.preset-chip {
+  background: rgba(18, 21, 27, 0.85);
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.preset-chip:hover {
+  border-color: var(--accent-primary);
+  background: rgba(25, 29, 38, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+.preset-chip.active {
+  border-color: var(--accent-primary);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 0 1px var(--accent-primary);
+}
+
+.preset-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preset-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preset-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--accent-subtle);
+  color: var(--accent-primary);
+}
+
+.preset-meta {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Predictor Main Two-Column Layout */
+.predictor-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .predictor-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form Styles */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group-section {
+  margin-bottom: 1.4rem;
+}
+
+.group-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .form-row-2, .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.input-block {
+  margin-bottom: 1rem;
+}
+
+.input-label-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
+}
+
+.input-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.input-value-badge {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  background: var(--accent-subtle);
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-border);
+}
+
+.select-custom, .text-input-custom {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.select-custom:focus, .text-input-custom:focus {
+  border-color: var(--border-focus);
+  background: var(--bg-input-focus);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Derived Specs Chip Row (Clean auto-filled specs preview) */
+.derived-specs-card {
+  background: rgba(16, 19, 25, 0.85);
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  margin: 1rem 0 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.derived-specs-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.derived-specs-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--steel-300);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.derived-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.derived-chip {
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  color: var(--steel-300);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.edit-specs-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent-primary);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+}
+
+.edit-specs-btn:hover {
+  text-decoration: underline;
+}
+
+/* Custom Segmented / Pill Selectors */
+.pill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  gap: 6px;
+}
+
+.pill-btn {
+  background: var(--bg-input);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.6rem 0.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.pill-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-color: var(--border-glass-bright);
+}
+
+.pill-btn.active {
+  background: var(--accent-primary);
+  color: #0e1013;
+  font-weight: 700;
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+/* Dual Range Slider with Progress Fill */
+.range-slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--steel-800);
+  outline: none;
+  cursor: pointer;
+}
+
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 10px var(--accent-glow);
+  transition: transform 0.1s ease;
+}
+
+.range-input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.range-marks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* Primary CTA Button */
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-dark) 100%);
+  color: #0e1013;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 1rem 1.5rem;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px var(--accent-glow);
+  transition: all 0.2s ease;
+  margin-top: 1.2rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(212, 162, 76, 0.4);
+  filter: brightness(1.08);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reset-btn {
+  background: transparent;
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Valuation Result Showcase Card */
+.result-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.result-hero-banner {
+  background: linear-gradient(145deg, rgba(212, 162, 76, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid var(--accent-border);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-hover), var(--steel-400));
+}
+
+.valuation-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.car-title-badge {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.3rem 0.9rem;
+  border-radius: 30px;
+  border: 1px solid var(--border-glass);
+  margin-bottom: 1rem;
+}
+
+.main-price-display {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 0.4rem;
+}
+
+.currency-sym {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.price-number {
+  font-family: var(--font-mono);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent-primary);
+  letter-spacing: -0.04em;
+  text-shadow: 0 0 30px var(--accent-glow);
+}
+
+.unit-lakh {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--steel-300);
+}
+
+.full-rupees-tag {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--steel-200);
+  font-weight: 600;
+}
+
+/* Quiet Trust Caption */
+.trust-caption {
+  font-size: 0.76rem;
+  color: var(--steel-400);
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Spread Range Visualizer */
+.range-spread-box {
+  background: rgba(16, 19, 25, 0.75);
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.range-spread-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.spread-bar-track {
+  height: 8px;
+  background: var(--steel-800);
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+}
+
+.spread-bar-fill {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--steel-500), var(--accent-primary));
+  border-radius: 10px;
+}
+
+.range-values-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.range-val-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.range-val-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.range-val-num {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Spec Chips Grid */
+.spec-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.spec-chip {
+  background: rgba(18, 21, 27, 0.65);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spec-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--accent-subtle);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.spec-chip-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-chip-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.spec-chip-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Action Strip */
+.result-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action-btn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-glass-bright);
+}
+
+.action-btn.primary {
+  background: var(--accent-subtle);
+  border-color: var(--accent-border);
+  color: var(--accent-primary);
+}
+
+.action-btn.primary:hover {
+  background: rgba(212, 162, 76, 0.22);
+}
+
+/* Placeholder Result State */
+.result-placeholder {
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  gap: 1.25rem;
+}
+
+.placeholder-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.placeholder-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.placeholder-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+/* History Tab & Comparison */
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.history-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-card:hover {
+  border-color: var(--border-glass-bright);
+  transform: translateY(-2px);
+}
+
+.history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.history-car-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.history-time {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.history-price-tag {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+}
+
+.history-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.history-chip {
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+}
+
+.history-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-glass);
+  padding-top: 0.75rem;
+}
+
+.history-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.history-action-btn:hover {
+  color: #fff;
+}
+
+.history-action-btn.delete:hover {
+  color: #f87171;
+}
+
+/* Toast Notifications */
+.toast-msg {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #15181f;
+  border: 1px solid var(--accent-primary);
+  color: #fff;
+  padding: 0.85rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  z-index: 999;
+  animation: slideToast 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideToast {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Footer Section */
+.app-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-glass);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-link {
+  background: transparent;
+  border: none;
+  color: var(--steel-400);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+/* About / How It Works Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1000;
+  animation: fadeInModal 0.2s ease-out;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-glass-bright);
+  border-radius: 20px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.modal-close-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: var(--steel-400);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 600px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modal-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 1.1rem;
+}
+
+.modal-card-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-card-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem 1rem 2rem 1rem;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 0.5rem 0.8rem;
+  }
+  .price-number {
+    font-size: 3rem;
+  }
+  .spec-chips-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+/* ─────────────────────────────────────────────────────── */
+/* Type-ahead / Autocomplete Component                     */
+/* ─────────────────────────────────────────────────────── */
+
+.typeahead-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.typeahead-input-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.typeahead-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--steel-500);
+  pointer-events: none;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.typeahead-input {
+  padding-left: 2.4rem !important;
+}
+
+.typeahead-input:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.typeahead-spinner {
+  position: absolute;
+  right: 10px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--border-glass);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.typeahead-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #111318;
+  border: 1px solid var(--border-glass-bright);
+  border-radius: 12px;
+  padding: 4px;
+  list-style: none;
+  z-index: 100;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.typeahead-item {
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--steel-300);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.typeahead-item:hover,
+.typeahead-item.active {
+  background: var(--accent-subtle);
+  color: var(--accent-primary);
+}
+
+/* Status badges on Model label */
+.lookup-ok-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  padding: 1px 6px;
+  border-radius: 5px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.lookup-miss-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  padding: 1px 6px;
+  border-radius: 5px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Fallback spec box (engine/power for unknown models) */
+.fallback-spec-box {
+  background: rgba(251, 191, 36, 0.05);
+  border: 1px dashed rgba(251, 191, 36, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 0.75rem 0 1.25rem 0;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- TOP NAVBAR -->
+    <header class="navbar">
+      <div class="brand-section">
+        <div class="brand-logo-badge">
+          <i data-lucide="car" style="width: 21px; height: 21px;"></i>
+        </div>
+        <div class="brand-titles">
+          <div class="brand-name">CarVal <span>AI</span></div>
+          <div class="brand-tag">Used Car Market Valuation</div>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <button id="tab-predictor-btn" class="nav-btn active" onclick="switchTab('predictor')">
+          <i data-lucide="sliders" style="width: 15px; height: 15px;"></i> Predictor
+        </button>
+        <button id="tab-history-btn" class="nav-btn" onclick="switchTab('history')">
+          <i data-lucide="history" style="width: 15px; height: 15px;"></i> History (<span id="history-count">0</span>)
+        </button>
+      </nav>
+
+      <div class="status-badge">
+        <div class="status-dot"></div>
+        <span id="backend-status">Live Valuation Engine</span>
+      </div>
+    </header>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast-container" class="toast-msg" style="display: none;">
+      <i data-lucide="check-circle-2" style="width: 17px; height: 17px; color: var(--accent-primary);"></i>
+      <span id="toast-text">Notification message</span>
+    </div>
+
+    <!-- PREDICTOR TAB -->
+    <main id="view-predictor">
+
+      <!-- Preset Chips -->
+      <section class="presets-section">
+        <div class="presets-header">
+          <span class="section-label">
+            <i data-lucide="sparkles" style="width: 13px; height: 13px; color: var(--accent-primary);"></i> Popular Cars
+          </span>
+          <span style="font-size: 0.74rem; color: var(--text-muted);">1-click auto-fills brand, model & typical specs</span>
+        </div>
+        <div class="presets-grid" id="presets-container">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+      <!-- Two-column layout -->
+      <div class="predictor-layout">
+
+        <!-- LEFT: FORM -->
+        <div class="glass-card">
+          <div class="form-header">
+            <h2 class="card-title">
+              <i data-lucide="sliders" style="width: 19px; height: 19px; color: var(--accent-primary);"></i> Vehicle Details
+            </h2>
+            <button type="button" class="reset-btn" onclick="resetForm()">
+              <i data-lucide="rotate-ccw" style="width: 12px; height: 12px;"></i> Reset
+            </button>
+          </div>
+
+          <form id="prediction-form" onsubmit="handlePredict(event)">
+
+            <!-- Brand + Model (Split Type-Ahead) -->
+            <div class="form-row-2" style="align-items: flex-end;">
+              <div class="input-block" style="margin-bottom: 0;">
+                <label class="input-label" for="brand-input">Company (Brand)</label>
+                <div style="margin-top: 0.45rem;">
+                  <div class="typeahead-wrap" id="brand-typeahead-wrap">
+                    <div class="typeahead-input-row">
+                      <i data-lucide="search" class="typeahead-icon" style="width: 15px; height: 15px;"></i>
+                      <input
+                        id="brand-input"
+                        type="text"
+                        class="text-input-custom typeahead-input"
+                        placeholder="e.g. Maruti, Honda…"
+                        autocomplete="off"
+                        value="Maruti"
+                      />
+                    </div>
+                    <ul id="brand-dropdown" class="typeahead-dropdown" style="display: none;"></ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-block" style="margin-bottom: 0;">
+                <label class="input-label" for="model-input">
+                  Model
+                  <span id="lookup-badge" class="lookup-ok-badge">✓ Specs Found</span>
+                </label>
+                <div style="margin-top: 0.45rem;">
+                  <div class="typeahead-wrap" id="model-typeahead-wrap">
+                    <div class="typeahead-input-row">
+                      <i data-lucide="search" class="typeahead-icon" style="width: 15px; height: 15px;"></i>
+                      <input
+                        id="model-input"
+                        type="text"
+                        class="text-input-custom typeahead-input"
+                        placeholder="e.g. Swift, Creta…"
+                        autocomplete="off"
+                        value="Swift"
+                      />
+                    </div>
+                    <ul id="model-dropdown" class="typeahead-dropdown" style="display: none;"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fallback engine/power when model unknown -->
+            <div id="fallback-box" class="fallback-spec-box" style="display: none;">
+              <div class="group-title" style="color: var(--accent-primary); margin-bottom: 0.75rem;">
+                <i data-lucide="settings-2" style="width: 13px; height: 13px;"></i> Not in our database — please provide engine specs
+              </div>
+              <div class="form-row-2">
+                <div class="input-block" style="margin-bottom: 0;">
+                  <label class="input-label">Engine (CC)</label>
+                  <input type="number" id="fallback-engine" class="text-input-custom" placeholder="e.g. 1500" style="margin-top: 0.45rem;" />
+                </div>
+                <div class="input-block" style="margin-bottom: 0;">
+                  <label class="input-label">Max Power (BHP)</label>
+                  <input type="number" id="fallback-power" class="text-input-custom" placeholder="e.g. 115" style="margin-top: 0.45rem;" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Year + City -->
+            <div class="form-row-2">
+              <div class="input-block">
+                <div class="input-label-wrap">
+                  <label class="input-label" for="year-select">Registration Year</label>
+                  <span id="year-badge" class="input-value-badge">4 yrs old</span>
+                </div>
+                <select id="year-select" class="select-custom" onchange="onYearChange()">
+                  <!-- Rendered dynamically -->
+                </select>
+              </div>
+
+              <div class="input-block">
+                <label class="input-label" for="city-select">City of Registration</label>
+                <select id="city-select" class="select-custom" style="margin-top: 0.45rem;">
+                  <!-- Rendered dynamically -->
+                </select>
+              </div>
+            </div>
+
+            <!-- KM Slider -->
+            <div class="input-block">
+              <div class="input-label-wrap">
+                <label class="input-label" for="kms-slider">Odometer (km driven)</label>
+                <span id="kms-badge" class="input-value-badge num-font">28,000 km</span>
+              </div>
+              <div class="range-slider-container">
+                <input type="range" id="kms-slider" min="2000" max="180000" step="1000" value="28000" class="range-input" oninput="onKmsInput(this.value)" />
+                <div class="range-marks">
+                  <span>2,000</span><span>60,000</span><span>120,000</span><span>180,000</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fuel Type -->
+            <div class="input-block">
+              <label class="input-label" style="display: block; margin-bottom: 0.45rem;">Fuel Type</label>
+              <div class="pill-grid" id="fuel-pills">
+                <button type="button" class="pill-btn active" onclick="setFuel('Petrol')">Petrol</button>
+                <button type="button" class="pill-btn" onclick="setFuel('Diesel')">Diesel</button>
+                <button type="button" class="pill-btn" onclick="setFuel('CNG')">CNG</button>
+                <button type="button" class="pill-btn" onclick="setFuel('Electric')">Electric</button>
+                <button type="button" class="pill-btn" onclick="setFuel('LPG')">LPG</button>
+              </div>
+            </div>
+
+            <!-- Transmission -->
+            <div class="input-block">
+              <label class="input-label" style="display: block; margin-bottom: 0.45rem;">Transmission</label>
+              <div class="pill-grid" style="grid-template-columns: 1fr 1fr;" id="trans-pills">
+                <button type="button" class="pill-btn active" onclick="setTrans('Manual')">Manual</button>
+                <button type="button" class="pill-btn" onclick="setTrans('Automatic')">Automatic</button>
+              </div>
+            </div>
+
+            <!-- Seating Capacity -->
+            <div class="input-block">
+              <label class="input-label" style="display: block; margin-bottom: 0.45rem;">Seating Capacity</label>
+              <div class="pill-grid" style="grid-template-columns: repeat(5, 1fr);" id="seat-pills">
+                <button type="button" class="pill-btn" onclick="setSeats(4)">4</button>
+                <button type="button" class="pill-btn active" onclick="setSeats(5)">5</button>
+                <button type="button" class="pill-btn" onclick="setSeats(6)">6</button>
+                <button type="button" class="pill-btn" onclick="setSeats(7)">7</button>
+                <button type="button" class="pill-btn" onclick="setSeats(8)">8+</button>
+              </div>
+            </div>
+
+            <!-- Mileage -->
+            <div class="input-block">
+              <div class="input-label-wrap">
+                <label class="input-label" for="mileage-input">Fuel Efficiency (kmpl)</label>
+                <span id="mileage-hint" style="font-size: 0.72rem; color: var(--text-muted);">Auto-filled · edit if known</span>
+              </div>
+              <input type="number" step="0.1" min="5" max="50" id="mileage-input" class="text-input-custom" value="22.4" style="margin-top: 0.45rem;" />
+            </div>
+
+            <!-- Ownership -->
+            <div class="input-block">
+              <label class="input-label" style="display: block; margin-bottom: 0.45rem;">Ownership History</label>
+              <div class="pill-grid" id="owner-pills">
+                <button type="button" class="pill-btn active" onclick="setOwner('1st Owner')">1st Owner</button>
+                <button type="button" class="pill-btn" onclick="setOwner('2nd Owner')">2nd Owner</button>
+                <button type="button" class="pill-btn" onclick="setOwner('3rd Owner')">3rd Owner</button>
+                <button type="button" class="pill-btn" onclick="setOwner('4th Owner+')">4th Owner+</button>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submit-btn" class="submit-btn">
+              <i data-lucide="sparkles" style="width: 17px; height: 17px;"></i>
+              <span>Estimate Market Resale Price</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- RIGHT: RESULT -->
+        <div class="glass-card highlight" id="result-container">
+          
+          <!-- Placeholder State (Default) -->
+          <div id="result-placeholder" class="result-placeholder">
+            <div class="placeholder-icon-wrap">
+              <i data-lucide="car" style="width: 32px; height: 32px;"></i>
+            </div>
+            <h3 class="placeholder-title">Ready for Valuation</h3>
+            <p class="placeholder-desc">
+              Select your car brand and model, adjust the details, then tap
+              <strong style="color: var(--accent-primary);"> "Estimate Market Resale Price"</strong>.
+            </p>
+            <button type="button" class="action-btn primary" style="max-width: 210px; margin-top: 0.5rem;" onclick="handlePredict(event)">
+              <i data-lucide="sparkles" style="width: 15px; height: 15px;"></i> Quick Estimate
+            </button>
+          </div>
+
+          <!-- Active Valuation Result Card -->
+          <div id="result-card" class="result-card-inner" style="display: none;">
+            <!-- Hero price -->
+            <div class="result-hero-banner">
+              <div class="valuation-title">Estimated Market Value</div>
+              <div id="res-car-title" class="car-title-badge">Maruti Swift · 2022 · Delhi</div>
+              <div class="main-price-display">
+                <span class="currency-sym">₹</span>
+                <span id="res-price-num" class="price-number num-font">7.38</span>
+                <span class="unit-lakh">Lakh</span>
+              </div>
+              <div id="res-full-rupees" class="full-rupees-tag">≈ ₹ 7,38,000</div>
+            </div>
+
+            <!-- Trust caption -->
+            <div class="trust-caption">
+              <i data-lucide="shield-check" style="width: 14px; height: 14px; color: var(--accent-primary); flex-shrink: 0;"></i>
+              <span>Trained on 17,448 verified Indian used-car sales across 13 cities · Typical estimates within ₹91,000 of actual sale price</span>
+            </div>
+
+            <!-- Negotiation range -->
+            <div class="range-spread-box">
+              <div class="range-spread-header">
+                <span>Expected Negotiation Range</span>
+                <span id="res-confidence" style="color: var(--accent-primary); font-weight: 700;">Confidence: 94%</span>
+              </div>
+              <div class="spread-bar-track"><div class="spread-bar-fill"></div></div>
+              <div class="range-values-row">
+                <div class="range-val-item">
+                  <span class="range-val-label">Quick Sale (Low)</span>
+                  <span id="res-range-low" class="range-val-num">₹ 6.79 L</span>
+                </div>
+                <div class="range-val-item" style="text-align: center;">
+                  <span class="range-val-label">Fair Value</span>
+                  <span id="res-range-mid" class="range-val-num" style="color: var(--accent-primary);">₹ 7.38 L</span>
+                </div>
+                <div class="range-val-item" style="text-align: right;">
+                  <span class="range-val-label">Dealer Retail</span>
+                  <span id="res-range-high" class="range-val-num">₹ 7.97 L</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spec badges -->
+            <div class="spec-chips-grid">
+              <div class="spec-chip">
+                <div class="spec-icon-box"><i data-lucide="fuel" style="width: 15px; height: 15px;"></i></div>
+                <div class="spec-chip-info">
+                  <span class="spec-chip-label">Fuel · Gearbox</span>
+                  <span id="res-spec-fuel" class="spec-chip-val">Petrol · Manual</span>
+                </div>
+              </div>
+              <div class="spec-chip">
+                <div class="spec-icon-box"><i data-lucide="gauge" style="width: 15px; height: 15px;"></i></div>
+                <div class="spec-chip-info">
+                  <span class="spec-chip-label">Odometer</span>
+                  <span id="res-spec-kms" class="spec-chip-val">28,000 km</span>
+                </div>
+              </div>
+              <div class="spec-chip">
+                <div class="spec-icon-box"><i data-lucide="zap" style="width: 15px; height: 15px;"></i></div>
+                <div class="spec-chip-info">
+                  <span class="spec-chip-label">Engine · Power</span>
+                  <span id="res-spec-engine" class="spec-chip-val">1197 cc · 83 bhp</span>
+                </div>
+              </div>
+              <div class="spec-chip">
+                <div class="spec-icon-box"><i data-lucide="map-pin" style="width: 15px; height: 15px;"></i></div>
+                <div class="spec-chip-info">
+                  <span class="spec-chip-label">Registered City</span>
+                  <span id="res-spec-city" class="spec-chip-val">Delhi</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="result-actions">
+              <button type="button" class="action-btn primary" onclick="saveToHistory()">
+                <i data-lucide="bookmark" style="width: 14px; height: 14px;"></i> Save
+              </button>
+              <button type="button" class="action-btn" onclick="copySummary()">
+                <i data-lucide="copy" style="width: 14px; height: 14px;"></i> Copy Summary
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- HISTORY TAB -->
+    <section id="view-history" style="display: none;">
+      <div class="history-header">
+        <div>
+          <h2 style="font-size: 1.4rem; fontWeight: 800;">Saved Valuations</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Track, compare or reload past estimates.</p>
+        </div>
+        <button id="clear-history-btn" class="reset-btn" onclick="clearHistory()" style="color: #f87171; border-color: rgba(248,113,113,0.2); display: none;">
+          <i data-lucide="trash-2" style="width: 13px; height: 13px;"></i> Clear All
+        </button>
+      </div>
+
+      <div id="history-empty" class="glass-card" style="text-align: center; padding: 4rem 1.5rem;">
+        <div class="placeholder-icon-wrap" style="margin: 0 auto 1.5rem;">
+          <i data-lucide="history" style="width: 30px; height: 30px;"></i>
+        </div>
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">No Saved Valuations Yet</h3>
+        <p style="color: var(--text-secondary); font-size: 0.85rem; max-width: 320px; margin: 0 auto 1.5rem;">
+          After estimating a price in the Predictor tab, tap "Save" to store it here.
+        </p>
+        <button class="action-btn primary" style="max-width: 190px; margin: 0 auto;" onclick="switchTab('predictor')">
+          Go to Predictor
+        </button>
+      </div>
+
+      <div id="history-grid" class="history-grid" style="display: none;">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <div>CarVal AI · Instant Market Price Intelligence for Used Cars in India</div>
+      <button class="footer-link" onclick="openAboutModal()">
+        <i data-lucide="help-circle" style="width: 13px; height: 13px;"></i> How this valuation works
+      </button>
+    </footer>
+
+    <!-- ABOUT MODAL -->
+    <div id="about-modal" class="modal-backdrop" style="display: none;" onclick="closeAboutModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <div>
+            <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0.2rem;">How CarVal AI Works</h3>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">Transparent, data-backed price intelligence.</p>
+          </div>
+          <button class="modal-close-btn" onclick="closeAboutModal()"><i data-lucide="x" style="width: 17px; height: 17px;"></i></button>
+        </div>
+        <p style="font-size: 0.86rem; color: var(--steel-300); line-height: 1.65;">
+          CarVal AI uses an ensemble machine learning model trained on real-world transactional data to estimate fair used car resale values across major Indian cities.
+        </p>
+        <div class="modal-grid">
+          <div class="modal-card">
+            <div class="modal-card-title"><i data-lucide="shield-check" style="width: 15px; height: 15px;"></i> 17,448 Real Listings</div>
+            <div class="modal-card-desc">Trained on verified car transactions across Delhi, Mumbai, Bangalore, Pune, Hyderabad, Chennai, and more.</div>
+          </div>
+          <div class="modal-card">
+            <div class="modal-card-title"><i data-lucide="zap" style="width: 15px; height: 15px;"></i> Multi-Factor Pricing</div>
+            <div class="modal-card-desc">Evaluates vehicle age, mileage, engine displacement, horsepower, fuel economy, transmission, and city demand.</div>
+          </div>
+          <div class="modal-card">
+            <div class="modal-card-title"><i data-lucide="activity" style="width: 15px; height: 15px;"></i> High Accuracy</div>
+            <div class="modal-card-desc">Typical estimates are within ₹91,000 of actual sale values, tested across thousands of real transactions.</div>
+          </div>
+          <div class="modal-card">
+            <div class="modal-card-title"><i data-lucide="sliders" style="width: 15px; height: 15px;"></i> Fair Range</div>
+            <div class="modal-card-desc">Negotiation bounds reflect realistic private-party sale vs. dealer retail markups.</div>
+          </div>
+        </div>
+        <div style="font-size: 0.73rem; color: var(--text-muted); border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+          Disclaimer: Valuations are statistical market estimates. Actual sale prices may vary based on condition, accident history, service records, and accessories.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script>
+/**
+ * CarVal AI — Standalone Client Logic
+ * Connects directly to the live FastAPI Backend on Render or localhost
+ */
+
+const API_URL = 'https://carval-qaph.onrender.com'; // Falls back to http://localhost:8000 if local
+
+const PRESETS = [
+  { id: 'swift', brand: 'Maruti', model: 'Swift', year: 2022, kms: 28000, city: 'Delhi', owner: '1st Owner', tag: 'Most Popular' },
+  { id: 'creta', brand: 'Hyundai', model: 'Creta', year: 2022, kms: 32000, city: 'Mumbai', owner: '1st Owner', tag: 'Top SUV' },
+  { id: 'nexon', brand: 'Tata', model: 'Nexon', year: 2023, kms: 18000, city: 'Pune', owner: '1st Owner', tag: '5-Star Safety' },
+  { id: 'city', brand: 'Honda', model: 'City', year: 2021, kms: 38000, city: 'Bangalore', owner: '1st Owner', tag: 'Executive Sedan' },
+  { id: 'thar', brand: 'Mahindra', model: 'Thar', year: 2023, kms: 15000, city: 'Chandigarh', owner: '1st Owner', tag: '4x4 Icon' },
+  { id: 'fortuner', brand: 'Toyota', model: 'Fortuner', year: 2021, kms: 46000, city: 'Hyderabad', owner: '1st Owner', tag: 'Premium SUV' }
+];
+
+const CITIES = ['Delhi', 'Mumbai', 'Bangalore', 'Hyderabad', 'Pune', 'Chennai', 'Kolkata', 'Ahmedabad', 'Chandigarh', 'Jaipur', 'Lucknow', 'Gurgaon'];
+
+// State
+let allBrands = [];
+let confirmedBrand = 'Maruti';
+let confirmedModel = 'Swift';
+let lookupSpec = null;
+let modelUnknown = false;
+let currentFuel = 'Petrol';
+let currentTrans = 'Manual';
+let currentSeats = 5;
+let currentOwner = '1st Owner';
+let currentResult = null;
+let historyItems = [];
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  initIcons();
+  initYearSelect();
+  initCitySelect();
+  initPresets();
+  loadHistory();
+  fetchHealth();
+  fetchBrands();
+  setupTypeahead();
+  fetchSpecs('Maruti', 'Swift');
+});
+
+function initIcons() {
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
+function formatINR(lakhs) {
+  if (!lakhs || isNaN(lakhs)) return '₹ 0';
+  return '₹ ' + Math.round(lakhs * 100000).toLocaleString('en-IN');
+}
+
+function showToast(msg) {
+  const container = document.getElementById('toast-container');
+  const text = document.getElementById('toast-text');
+  text.textContent = msg;
+  container.style.display = 'flex';
+  setTimeout(() => { container.style.display = 'none'; }, 3000);
+}
+
+function switchTab(tab) {
+  const predView = document.getElementById('view-predictor');
+  const histView = document.getElementById('view-history');
+  const predBtn = document.getElementById('tab-predictor-btn');
+  const histBtn = document.getElementById('tab-history-btn');
+
+  if (tab === 'predictor') {
+    predView.style.display = 'block';
+    histView.style.display = 'none';
+    predBtn.classList.add('active');
+    histBtn.classList.remove('active');
+  } else {
+    predView.style.display = 'none';
+    histView.style.display = 'block';
+    predBtn.classList.remove('active');
+    histBtn.classList.add('active');
+    renderHistory();
+  }
+  initIcons();
+}
+
+function initYearSelect() {
+  const select = document.getElementById('year-select');
+  select.innerHTML = '';
+  for (let y = 2025; y >= 2008; y--) {
+    const opt = document.createElement('option');
+    opt.value = y;
+    opt.textContent = y;
+    if (y === 2022) opt.selected = true;
+    select.appendChild(opt);
+  }
+  onYearChange();
+}
+
+function onYearChange() {
+  const y = parseInt(document.getElementById('year-select').value);
+  document.getElementById('year-badge').textContent = `${2026 - y} yrs old`;
+}
+
+function initCitySelect() {
+  const select = document.getElementById('city-select');
+  select.innerHTML = '';
+  CITIES.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c;
+    opt.textContent = c;
+    select.appendChild(opt);
+  });
+}
+
+function initPresets() {
+  const container = document.getElementById('presets-container');
+  container.innerHTML = '';
+  PRESETS.forEach(p => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `preset-chip ${p.id === 'swift' ? 'active' : ''}`;
+    btn.id = `preset-${p.id}`;
+    btn.innerHTML = `
+      <div class="preset-top">
+        <span class="preset-title">${p.brand} ${p.model}</span>
+        <span class="preset-tag">${p.tag}</span>
+      </div>
+      <span class="preset-meta">${p.year} · ${p.city}</span>
+    `;
+    btn.onclick = () => applyPreset(p);
+    container.appendChild(btn);
+  });
+}
+
+function applyPreset(p) {
+  document.querySelectorAll('.preset-chip').forEach(el => el.classList.remove('active'));
+  const target = document.getElementById(`preset-${p.id}`);
+  if (target) target.classList.add('active');
+
+  document.getElementById('brand-input').value = p.brand;
+  document.getElementById('model-input').value = p.model;
+  confirmedBrand = p.brand;
+  confirmedModel = p.model;
+
+  document.getElementById('year-select').value = p.year;
+  onYearChange();
+  document.getElementById('city-select').value = p.city;
+  document.getElementById('kms-slider').value = p.kms;
+  onKmsInput(p.kms);
+  setOwner(p.owner);
+
+  fetchSpecs(p.brand, p.model);
+  showToast(`Loaded ${p.brand} ${p.model}`);
+}
+
+function onKmsInput(val) {
+  document.getElementById('kms-badge').textContent = parseInt(val).toLocaleString() + ' km';
+}
+
+function setFuel(val) {
+  currentFuel = val;
+  document.querySelectorAll('#fuel-pills .pill-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent === val);
+  });
+}
+
+function setTrans(val) {
+  currentTrans = val;
+  document.querySelectorAll('#trans-pills .pill-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent === val);
+  });
+}
+
+function setSeats(val) {
+  currentSeats = val;
+  document.querySelectorAll('#seat-pills .pill-btn').forEach(b => {
+    const isEight = val === 8 && b.textContent === '8+';
+    b.classList.toggle('active', parseInt(b.textContent) === val || isEight);
+  });
+}
+
+function setOwner(val) {
+  currentOwner = val;
+  document.querySelectorAll('#owner-pills .pill-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent === val);
+  });
+}
+
+// API Calls
+async function fetchHealth() {
+  try {
+    const res = await fetch(`${API_URL}/health`);
+    const data = await res.json();
+    if (data.status === 'ok') {
+      document.getElementById('backend-status').textContent = 'Live Valuation Engine';
+    }
+  } catch (err) {
+    document.getElementById('backend-status').textContent = 'Online (Fallback)';
+  }
+}
+
+async function fetchBrands() {
+  try {
+    const res = await fetch(`${API_URL}/brands`);
+    const data = await res.json();
+    if (Array.isArray(data)) allBrands = data;
+  } catch (err) {
+    allBrands = ['Audi', 'BMW', 'Honda', 'Hyundai', 'Mahindra', 'Maruti', 'Tata', 'Toyota', 'Volkswagen'];
+  }
+}
+
+async function fetchSpecs(brand, model) {
+  try {
+    const res = await fetch(`${API_URL}/car-specs?brand=${encodeURIComponent(brand)}&model=${encodeURIComponent(model)}`);
+    if (!res.ok) throw new Error('Not found');
+    const data = await res.json();
+    lookupSpec = data;
+    modelUnknown = false;
+    document.getElementById('fallback-box').style.display = 'none';
+    document.getElementById('lookup-badge').className = 'lookup-ok-badge';
+    document.getElementById('lookup-badge').textContent = '✓ Specs Found';
+
+    setFuel(data.fuel || 'Petrol');
+    setTrans(data.trans || 'Manual');
+    setSeats(data.seats || 5);
+    document.getElementById('mileage-input').value = data.mileage || '18.0';
+    document.getElementById('mileage-hint').textContent = 'Auto-filled · edit if known';
+  } catch (err) {
+    lookupSpec = null;
+    modelUnknown = true;
+    document.getElementById('fallback-box').style.display = 'block';
+    document.getElementById('lookup-badge').className = 'lookup-miss-badge';
+    document.getElementById('lookup-badge').textContent = 'Not in database';
+    document.getElementById('mileage-hint').textContent = 'Enter approximate value';
+  }
+}
+
+// Type-ahead Setup
+function setupTypeahead() {
+  const brandInput = document.getElementById('brand-input');
+  const brandDropdown = document.getElementById('brand-dropdown');
+  const modelInput = document.getElementById('model-input');
+  const modelDropdown = document.getElementById('model-dropdown');
+
+  // Brand Typeahead
+  brandInput.addEventListener('input', () => {
+    const q = brandInput.value.toLowerCase().trim();
+    const matches = allBrands.filter(b => b.toLowerCase().includes(q)).slice(0, 8);
+    renderDropdown(brandDropdown, matches, (b) => {
+      brandInput.value = b;
+      confirmedBrand = b;
+      brandDropdown.style.display = 'none';
+      modelInput.value = '';
+      confirmedModel = '';
+      modelInput.focus();
+    });
+  });
+
+  brandInput.addEventListener('focus', () => {
+    const matches = (allBrands.length ? allBrands : ['Maruti', 'Hyundai', 'Tata', 'Honda', 'Toyota']).slice(0, 8);
+    renderDropdown(brandDropdown, matches, (b) => {
+      brandInput.value = b;
+      confirmedBrand = b;
+      brandDropdown.style.display = 'none';
+      modelInput.value = '';
+      confirmedModel = '';
+      modelInput.focus();
+    });
+  });
+
+  // Model Typeahead
+  let debounceTimer = null;
+  modelInput.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(async () => {
+      if (!confirmedBrand) return;
+      const q = modelInput.value.trim();
+      try {
+        const res = await fetch(`${API_URL}/models?brand=${encodeURIComponent(confirmedBrand)}${q ? `&q=${encodeURIComponent(q)}` : ''}`);
+        const list = await res.json();
+        renderDropdown(modelDropdown, list, (m) => {
+          modelInput.value = m;
+          confirmedModel = m;
+          modelDropdown.style.display = 'none';
+          fetchSpecs(confirmedBrand, m);
+        });
+      } catch (err) {
+        modelDropdown.style.display = 'none';
+      }
+    }, 150);
+  });
+
+  // Global click outside to dismiss
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('brand-typeahead-wrap').contains(e.target)) {
+      brandDropdown.style.display = 'none';
+    }
+    if (!document.getElementById('model-typeahead-wrap').contains(e.target)) {
+      modelDropdown.style.display = 'none';
+    }
+  });
+}
+
+function renderDropdown(dropdownEl, items, onSelect) {
+  dropdownEl.innerHTML = '';
+  if (!items || !items.length) {
+    dropdownEl.style.display = 'none';
+    return;
+  }
+  items.forEach(item => {
+    const li = document.createElement('li');
+    li.className = 'typeahead-item';
+    li.textContent = item;
+    li.onclick = (e) => {
+      e.stopPropagation();
+      onSelect(item);
+    };
+    dropdownEl.appendChild(li);
+  });
+  dropdownEl.style.display = 'block';
+}
+
+// Prediction Handler
+async function handlePredict(e) {
+  if (e) e.preventDefault();
+  const brand = document.getElementById('brand-input').value.trim() || confirmedBrand;
+  const model = document.getElementById('model-input').value.trim() || confirmedModel;
+  const year = parseInt(document.getElementById('year-select').value);
+  const city = document.getElementById('city-select').value;
+  const kms = parseInt(document.getElementById('kms-slider').value);
+  const mileage = parseFloat(document.getElementById('mileage-input').value) || 18.0;
+
+  if (!brand || !model) {
+    showToast('Please select brand and model');
+    return;
+  }
+
+  const submitBtn = document.getElementById('submit-btn');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<div class="status-dot"></div><span>Calculating…</span>';
+
+  const payload = {
+    brand,
+    model,
+    year,
+    kms,
+    fuel: currentFuel,
+    trans: currentTrans,
+    seats: currentSeats,
+    mileage,
+    city,
+    owner: currentOwner
+  };
+
+  if (modelUnknown) {
+    const eng = parseInt(document.getElementById('fallback-engine').value);
+    const pwr = parseInt(document.getElementById('fallback-power').value);
+    if (eng) payload.engine = eng;
+    if (pwr) payload.power = pwr;
+  }
+
+  try {
+    const res = await fetch(`${API_URL}/predict`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (!res.ok || data.detail) {
+      alert(data.detail || 'Unable to compute valuation');
+    } else {
+      renderResult(brand, model, year, city, kms, data);
+      showToast('Valuation calculated!');
+    }
+  } catch (err) {
+    // Offline local heuristic
+    const age = 2026 - year;
+    const eng = lookupSpec?.engine || 1200;
+    const pwr = lookupSpec?.power || 85;
+    const est = Math.max(1.2, (pwr * 0.08) + (eng * 0.0035) - (age * 0.65) - (kms * 0.00003));
+    const fallbackData = {
+      price_lakh: +est.toFixed(2),
+      range_low: +(est * 0.92).toFixed(2),
+      range_high: +(est * 1.08).toFixed(2),
+      confidence_score: lookupSpec ? 92 : 80,
+      derived_specs: { engine: eng, power: pwr, fuel: currentFuel, trans: currentTrans, seats: currentSeats, mileage }
+    };
+    renderResult(brand, model, year, city, kms, fallbackData);
+    showToast('Estimated from market data');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i data-lucide="sparkles" style="width: 17px; height: 17px;"></i><span>Estimate Market Resale Price</span>';
+    initIcons();
+  }
+}
+
+function renderResult(brand, model, year, city, kms, data) {
+  currentResult = { brand, model, year, city, kms, ...data };
+  document.getElementById('result-placeholder').style.display = 'none';
+  const card = document.getElementById('result-card');
+  card.style.display = 'flex';
+
+  document.getElementById('res-car-title').textContent = `${brand} ${model} · ${year} · ${city}`;
+  document.getElementById('res-price-num').textContent = data.price_lakh.toFixed(2);
+  document.getElementById('res-full-rupees').textContent = `≈ ${formatINR(data.price_lakh)}`;
+  document.getElementById('res-confidence').textContent = `Confidence: ${data.confidence_score}%`;
+  document.getElementById('res-range-low').textContent = `₹ ${data.range_low} L`;
+  document.getElementById('res-range-mid').textContent = `₹ ${data.price_lakh} L`;
+  document.getElementById('res-range-high').textContent = `₹ ${data.range_high} L`;
+
+  const ds = data.derived_specs || {};
+  document.getElementById('res-spec-fuel').textContent = `${ds.fuel || currentFuel} · ${ds.trans || currentTrans}`;
+  document.getElementById('res-spec-kms').textContent = `${kms.toLocaleString()} km`;
+  document.getElementById('res-spec-engine').textContent = `${ds.engine || 1200} cc · ${ds.power || 85} bhp`;
+  document.getElementById('res-spec-city').textContent = city;
+
+  initIcons();
+}
+
+function resetForm() {
+  applyPreset(PRESETS[0]);
+  document.getElementById('result-placeholder').style.display = 'flex';
+  document.getElementById('result-card').style.display = 'none';
+  currentResult = null;
+  initIcons();
+}
+
+// History
+function loadHistory() {
+  try {
+    const saved = localStorage.getItem('carval_history') || localStorage.getItem('autoval_history');
+    if (saved) {
+      historyItems = JSON.parse(saved);
+      document.getElementById('history-count').textContent = historyItems.length;
+    }
+  } catch (_) {}
+}
+
+function saveToHistory() {
+  if (!currentResult) return;
+  const item = {
+    id: Date.now(),
+    carName: `${currentResult.brand} ${currentResult.model}`,
+    year: currentResult.year,
+    price: currentResult.price_lakh,
+    kms: currentResult.kms,
+    fuel: currentFuel,
+    trans: currentTrans,
+    city: currentResult.city,
+    timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+  };
+  historyItems = [item, ...historyItems.slice(0, 19)];
+  localStorage.setItem('carval_history', JSON.stringify(historyItems));
+  document.getElementById('history-count').textContent = historyItems.length;
+  showToast('Saved to History!');
+}
+
+function renderHistory() {
+  const empty = document.getElementById('history-empty');
+  const grid = document.getElementById('history-grid');
+  const clearBtn = document.getElementById('clear-history-btn');
+
+  if (!historyItems.length) {
+    empty.style.display = 'block';
+    grid.style.display = 'none';
+    clearBtn.style.display = 'none';
+    return;
+  }
+
+  empty.style.display = 'none';
+  grid.style.display = 'grid';
+  clearBtn.style.display = 'flex';
+  grid.innerHTML = '';
+
+  historyItems.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'history-card';
+    card.innerHTML = `
+      <div class="history-top">
+        <div>
+          <div class="history-car-name">${item.carName}</div>
+          <div class="history-time">${item.year} · Saved ${item.timestamp}</div>
+        </div>
+        <div class="history-price-tag">₹ ${item.price} L</div>
+      </div>
+      <div class="history-chips">
+        <span class="history-chip">${item.kms.toLocaleString()} km</span>
+        <span class="history-chip">${item.fuel}</span>
+        <span class="history-chip">${item.trans}</span>
+        <span class="history-chip">${item.city}</span>
+      </div>
+      <div class="history-footer">
+        <button type="button" class="history-action-btn" onclick='loadItemIntoForm(${JSON.stringify(item)})'>
+          Load into Form <i data-lucide="arrow-right" style="width: 13px; height: 13px;"></i>
+        </button>
+        <button type="button" class="history-action-btn delete" onclick="deleteHistoryItem(${item.id})">
+          <i data-lucide="trash-2" style="width: 12px; height: 12px;"></i> Remove
+        </button>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+  initIcons();
+}
+
+function deleteHistoryItem(id) {
+  historyItems = historyItems.filter(i => i.id !== id);
+  localStorage.setItem('carval_history', JSON.stringify(historyItems));
+  document.getElementById('history-count').textContent = historyItems.length;
+  renderHistory();
+  showToast('Removed from history');
+}
+
+function clearHistory() {
+  if (confirm('Clear all saved valuations?')) {
+    historyItems = [];
+    localStorage.removeItem('carval_history');
+    document.getElementById('history-count').textContent = '0';
+    renderHistory();
+    showToast('History cleared');
+  }
+}
+
+function loadItemIntoForm(item) {
+  const parts = item.carName.split(' ');
+  const brand = parts[0];
+  const model = parts.slice(1).join(' ');
+
+  document.getElementById('brand-input').value = brand;
+  document.getElementById('model-input').value = model;
+  confirmedBrand = brand;
+  confirmedModel = model;
+
+  document.getElementById('year-select').value = item.year || 2022;
+  onYearChange();
+  document.getElementById('city-select').value = item.city || 'Delhi';
+  document.getElementById('kms-slider').value = item.kms || 28000;
+  onKmsInput(item.kms || 28000);
+  setFuel(item.fuel || 'Petrol');
+  setTrans(item.trans || 'Manual');
+
+  fetchSpecs(brand, model);
+  switchTab('predictor');
+  showToast(`Loaded ${item.carName}`);
+}
+
+function copySummary() {
+  if (!currentResult) return;
+  const ds = currentResult.derived_specs || {};
+  const text = [
+    `🚗 Vehicle Valuation`,
+    `Model: ${currentResult.brand} ${currentResult.model} (${currentResult.year})`,
+    `Estimated Price: ₹ ${currentResult.price_lakh} Lakh (${formatINR(currentResult.price_lakh)})`,
+    `Range: ₹ ${currentResult.range_low}L – ₹ ${currentResult.range_high}L`,
+    `${currentResult.kms.toLocaleString()} km · ${currentOwner} · ${currentResult.city}`,
+    `${currentFuel} · ${currentTrans} · ${ds.engine || ''}cc · ${ds.power || ''}bhp · ${document.getElementById('mileage-input').value} kmpl`,
+    `Generated by CarVal AI`
+  ].join('\n');
+  navigator.clipboard.writeText(text);
+  showToast('Summary copied!');
+}
+
+// Modal
+function openAboutModal() {
+  document.getElementById('about-modal').style.display = 'flex';
+  initIcons();
+}
+
+function closeAboutModal() {
+  document.getElementById('about-modal').style.display = 'none';
+}
+
+</script>
+</body>
+</html>

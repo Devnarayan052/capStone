@@ -20,8 +20,11 @@ env/
 .DS_Store
 Thumbs.db
 
-# Exports
-exports/
+# Root loose temp files & binaries
+/*.pdf
+/*.docx
+/*.dmg
+/*.csv
 
 # IDE
 .vscode/
